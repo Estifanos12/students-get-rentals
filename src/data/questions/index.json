@@ -1,0 +1,316 @@
+[
+  {
+    "question": "What is the most common Dryer issue?",
+    "options": [
+      { "value": "A", "text": "Overheating" },
+      { "value": "B", "text": "Wobbling" },
+      { "value": "C", "text": "Won't turn on" },
+      { "value": "D", "text": "No heat" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "What are the causes of Dryer overheating?",
+    "options": [
+      { "value": "A", "text": "Restricted air flow" },
+      { "value": "B", "text": "Too much clothes in dryer" },
+      { "value": "C", "text": "Dryer is old" },
+      { "value": "D", "text": "Dryer is wrong model" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "What is an easy way to 'do something' to see if overheating is fixed?",
+    "options": [
+      { "value": "A", "text": "Clean lint filter and vacuum out lint area" },
+      { "value": "B", "text": "Call your appliance shop" },
+      { "value": "C", "text": "Turn dryer on side and put back" },
+      { "value": "D", "text": "Use special dryer sheets" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "Why would a dryer take a long time to dry clothes?",
+    "options": [
+      { "value": "A", "text": "Lint build up in trap" },
+      { "value": "B", "text": "Too much cotton clothing" },
+      { "value": "C", "text": "Set to wrong cycle" },
+      { "value": "D", "text": "Wrong model" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "If the washing machine is not draining, what could the problem be?",
+    "options": [
+      { "value": "A", "text": "Blocked drain hose" },
+      { "value": "B", "text": "Unbalanced" },
+      { "value": "C", "text": "Sock stuck in bottom" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "What is one maintenance task you do to increase the cooling and reduce the energy consumption? How often should this be done?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Vacuum or brush condenser coils located at back or under the unit"
+      },
+      { "value": "B", "text": "Flip on side and put back to upright" },
+      { "value": "C", "text": "Change the coolant" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "What is another task for the refrigerator that should be done on a monthly basis that makes your fridge more economical to run?",
+    "options": [
+      { "value": "A", "text": "Check the seals" },
+      { "value": "B", "text": "Turn off and turn on" },
+      { "value": "C", "text": "Defrost" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "What should you clean the inside of your fridge with?",
+    "options": [
+      { "value": "A", "text": "Baking soda and water" },
+      { "value": "B", "text": "Mr. Clean" },
+      { "value": "C", "text": "Dish soap" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "What is not a common problem with toilets?",
+    "options": [
+      { "value": "A", "text": "Water running" },
+      { "value": "B", "text": "Plugged" },
+      { "value": "C", "text": "Leaks around base" },
+      { "value": "D", "text": "Too expensive" }
+    ],
+    "correct_option": "D",
+    "category": "appliances"
+  },
+  {
+    "question": "What will constant running of toilet result in?",
+    "options": [
+      { "value": "A", "text": "High water bill" },
+      { "value": "B", "text": "Wear on flapper valve" },
+      { "value": "C", "text": "There are no adverse effects" }
+    ],
+    "correct_option": "A",
+    "category": "appliances"
+  },
+  {
+    "question": "What are the 3 ingredients that are needed to result in a 'work of art' bathroom or kitchen?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Cleaning supplies, knowledge, skills, and motivation"
+      },
+      { "value": "B", "text": "Baking soda, gloves, and a positive attitude" },
+      { "value": "C", "text": "None of the above as each bathroom is unique" }
+    ],
+    "correct_option": "A",
+    "category": "how-to-clean"
+  },
+  {
+    "question": "How to clean kitchen weekly?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Mop the floor, clean appliances, disinfect the sink, change tea/dish towel and dish cloth, wash out compost container, wash the dish drying rack"
+      },
+      {
+        "value": "B",
+        "text": "Just wash the counters is the only thing necessary"
+      },
+      { "value": "C", "text": "Wash counters and sweep floor is fine" }
+    ],
+    "correct_option": "A",
+    "category": "how-to-clean"
+  },
+  {
+    "question": "How to clean living room?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Declutter, dust, vacuum pillows from sofas and chairs and under them, vacuum, mop, clean glass surfaces"
+      },
+      { "value": "B", "text": "A simple sweep is fine" },
+      { "value": "C", "text": "Sweep and dust" }
+    ],
+    "correct_option": "A",
+    "category": "how-to-clean"
+  },
+  {
+    "question": "What is the big fear of cleaning, especially in the bathroom?",
+    "options": [
+      { "value": "A", "text": "Cross contamination" },
+      {
+        "value": "B",
+        "text": "Getting bacteria on your hands and touching your eyes"
+      },
+      { "value": "C", "text": "Running out of time to do a good job" }
+    ],
+    "correct_option": "B",
+    "category": "how-to-clean"
+  },
+  {
+    "question": "Name things needed to clean a bathroom?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Gloves, toilet brush/rag specifically for toilet, all purpose cleaner, glass cleaner"
+      },
+      {
+        "value": "B",
+        "text": "Just baking soda and vinegar and good wash cloth"
+      },
+      {
+        "value": "C",
+        "text": "Mr. Clean, mop, gloves, and Windex, and paper towels"
+      }
+    ],
+    "correct_option": "A",
+    "category": "how-to-clean"
+  },
+  {
+    "question": "What is the first step in cleaning a living room?",
+    "options": [
+      { "value": "A", "text": "Declutter" },
+      { "value": "B", "text": "Sweep" },
+      { "value": "C", "text": "Dust" }
+    ],
+    "correct_option": "A",
+    "category": "how-to-clean"
+  },
+  {
+    "question": "Why is it important to shovel the walks at the house and sidewalk in front of house?",
+    "options": [
+      {
+        "value": "A",
+        "text": "It is your legal responsibility and if someone slips and falls, you are liable for damages"
+      },
+      { "value": "B", "text": "To be a good neighbour" },
+      { "value": "C", "text": "It is good exercise" }
+    ],
+    "correct_option": "A",
+    "category": "how-to-clean"
+  },
+  {
+    "question": "What is a credit score?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Your payment history for your student loans only"
+      },
+      { "value": "B", "text": "Your payment history of credit cards only" },
+      { "value": "C", "text": "Your payment history on any bills or debts" }
+    ],
+    "correct_option": "C",
+    "category": "credit_scores_and_references"
+  },
+  {
+    "question": "What is the name of one company that allows landlords to report rent paid on your credit bureau?",
+    "options": [
+      { "value": "A", "text": "Amazon" },
+      { "value": "B", "text": "Front lobby" },
+      { "value": "C", "text": "Mastercard" }
+    ],
+    "correct_option": "B",
+    "category": "credit_scores_and_references"
+  },
+  {
+    "question": "What can be covered in a landlord reference?",
+    "options": [
+      { "value": "A", "text": "Punctuality in paying rent" },
+      { "value": "B", "text": "How well you maintained the property" },
+      { "value": "C", "text": "Overall reliability" },
+      { "value": "D", "text": "All the above" }
+    ],
+    "correct_option": "D",
+    "category": "credit_scores_and_references"
+  },
+  {
+    "question": "What is one website you can build your landlord reference by asking your landlord to review you?",
+    "options": [
+      { "value": "A", "text": "LandlordandtenantReviews.com" },
+      { "value": "B", "text": "Myspace" },
+      { "value": "C", "text": "Facebook" }
+    ],
+    "correct_option": "A",
+    "category": "credit_scores_and_references"
+  },
+  {
+    "question": "What are the first two priorities to stop pests?",
+    "options": [
+      { "value": "A", "text": "Don’t buy used furniture" },
+      {
+        "value": "B",
+        "text": "Seal entry points and proper storage of food and fix leaks"
+      },
+      { "value": "C", "text": "Develop a safety plan and meet with housemates" }
+    ],
+    "correct_option": "B",
+    "category": "pest_control"
+  },
+  {
+    "question": "What are the things you can do to reduce the chance of bed bugs?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Understand their hideouts, inspect furniture, keep luggage off floors when travelling, use protective covers"
+      },
+      {
+        "value": "B",
+        "text": "Make sure your food is kept in the fridge and inspect shoes when entering from outside"
+      },
+      {
+        "value": "C",
+        "text": "Wash your bedding in hot water and your clothes and sleep with blankets made of wool"
+      }
+    ],
+    "correct_option": "A",
+    "category": "pest_control"
+  },
+  {
+    "question": "For second-hand furniture, what should you look for?",
+    "options": [
+      { "value": "A", "text": "Live insects" },
+      { "value": "B", "text": "Rust-colored stains from their excrement" },
+      { "value": "C", "text": "Tiny, pale-yellow eggs" },
+      { "value": "D", "text": "All the above" }
+    ],
+    "correct_option": "D",
+    "category": "pest_control"
+  },
+  {
+    "question": "Where in second-hand furniture should you look?",
+    "options": [
+      {
+        "value": "A",
+        "text": "Pay special attention to seams, crevices, and folds in fabric where bed bugs like to hide"
+      }
+    ],
+    "correct_option": "A",
+    "category": "pest_control"
+  },
+  {
+    "question": "What are the three things cockroaches need?",
+    "options": [
+      { "value": "A", "text": "Food" },
+      { "value": "B", "text": "Water" },
+      { "value": "C", "text": "Dark warm hidden areas in cluttered spaces" },
+      { "value": "D", "text": "All the above" }
+    ],
+    "correct_option": "D",
+    "category": "pest_control"
+  }
+]

@@ -1,0 +1,30 @@
+import Link from "next/link";
+
+import { Button } from "../../../components/ui/button";
+
+# QUIZ
+
+Read the following instructions before taking the quiz
+
+1. The quiz contains 20 multiple choice questions.
+2. The time limit for the quiz is 1 hours. You have to complete the quiz within the time limit.
+3. The quiz will start as soon as you click the start quiz button. So make sure to read the instructions before starting the quiz.
+4. Do not reload the page, it will reset the quiz and you have to start from the beginning.
+5. Don't leave the current tab, it will reset the quiz and you can lost your progress.
+6. You can end the quiz anytime by clicking the "Submit Quiz" button.
+7. Once you submit the quiz, you will get the result immediately on <Link href="/results">Results page</Link>.
+
+<Link href="/quiz/how-to-clean">
+  <Button
+    className="bg-red-500"
+    style={{
+      backgroundColor: "#218245",
+      padding: "10px 20px",
+      borderRadius: "5px",
+      color: "#fff",
+      marginTop: "20px",
+    }}
+  >
+    Start Quiz
+  </Button>
+</Link>
