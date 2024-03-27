@@ -88,7 +88,7 @@ const RegisterForm = () => {
             className="mx-auto w-full max-w-md"
           />
         }
-        className="flex flex-1 flex-col justify-start py-12 shadow-none"
+        className="flex flex-1 flex-col justify-start py-12 shadow-none bg-transparent"
       >
         <div className="mx-auto w-full max-w-md">
           <Form {...form}>

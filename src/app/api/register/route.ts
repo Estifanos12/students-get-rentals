@@ -18,7 +18,7 @@ const validationSchema = Joi.object({
 
 export const POST = async (req: Request, res: Response) => {
   totp.options = { digits: 6 };
-  const secret = process.env.OTP_SECRET;
+  const secret = process.env.NEXT_PUBLIC_OTP_SECRET;
   const token = totp.generate(secret as string);
 
   try {
