@@ -1,7 +1,7 @@
 export const getQuiz = async (quiz: string) => {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/get-quizzes/${quiz}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}api/get-quizzes/${quiz}`
     );
     const data = await response.json();
 
