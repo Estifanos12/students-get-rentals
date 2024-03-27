@@ -71,18 +71,21 @@ export const authOptions: NextAuthOptions = {
             email: profile?.email,
           });
           if (!user) {
-            const response = await fetch("http://localhost:3000/api/register", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                fullname: profile?.name,
-                email: profile?.email,
-                password: "password",
-                email_verified: true,
-              }),
-            });
+            const response = await fetch(
+              `${process.env.NEXT_PUBLIC_BASE_URL}api/register`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  fullname: profile?.name,
+                  email: profile?.email,
+                  password: "password",
+                  email_verified: true,
+                }),
+              }
+            );
           } else {
             return NextResponse.json(
               {
@@ -101,18 +104,21 @@ export const authOptions: NextAuthOptions = {
             email: profile?.email,
           });
           if (!user) {
-            const response = await fetch("http://localhost:3000/api/register", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                fullname: profile?.name,
-                email: profile?.email,
-                password: "password",
-                email_verified: true,
-              }),
-            });
+            const response = await fetch(
+              `${process.env.NEXT_PUBLIC_BASE_URL}api/register`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  fullname: profile?.name,
+                  email: profile?.email,
+                  password: "password",
+                  email_verified: true,
+                }),
+              }
+            );
           } else {
             return NextResponse.json(
               {
