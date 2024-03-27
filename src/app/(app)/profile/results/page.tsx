@@ -12,9 +12,7 @@ export default async function ResultPage() {
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-student-result?email=${session?.user.email}`,
-    {
-      cache: "no-cache",
-    }
+    { cache: "no-store" }
   );
 
   const result = await response.json();
