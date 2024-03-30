@@ -1,9 +1,8 @@
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
-import { getUserInfo } from "@/lib/getUserInfo";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { Profile } from "@/components/profile/profile";
+import Profile from "@/components/profile/profile";
 
 export default async function ProfilePage() {
   const session = await getServerSession(authOptions);
@@ -12,11 +11,11 @@ export default async function ProfilePage() {
     redirect("/login?callbackUrl=/profile");
   }
 
-  const userData = await getUserInfo(session?.user.email);
-
-  return (
-    <div>
-      <Profile data={userData} />
-    </div>
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}api/get-student?email=${session.user.email}`
   );
+
+  const userData = await response.json();
+
+  return <Profile data={userData} />;
 }

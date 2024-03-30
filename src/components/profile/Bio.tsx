@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FaEdit } from "react-icons/fa";
 
 import { TextEditor } from "./text-editor";
 import { Button } from "../ui/button";
-import { FaEdit } from "react-icons/fa";
 import { updateBio } from "@/actions/update_bio";
 import { toast } from "../ui/use-toast";
 
@@ -56,7 +56,7 @@ export const Bio = ({ bio, email }) => {
         ) : null}
       </div>
       {showEditor && (
-        <div className="shadow-xl rounded-lg px-7 py-12 my-7 outline outline-1 outline-transparent dark:outline-primary flex flex-col gap-10">
+        <div className="shadow-xl rounded-lg px-7 py-12 mt-7 outline outline-1 outline-transparent dark:outline-primary flex flex-col gap-10">
           <TextEditor
             bio={currentBio}
             editable={editable}

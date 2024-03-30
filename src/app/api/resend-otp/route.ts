@@ -26,7 +26,7 @@ export const POST = async (req: Request, res: Response) => {
 };
 
 const sendNewOtp = async (email: string) => {
-  const secret = process.env.NEXT_PUBLIC_OTP_SECRET;
+  const secret = process.env.OTP_SECRET;
   totp.options = { digits: 6 };
   const token = totp.generate(secret as string);
   const userOtp = new OTP({

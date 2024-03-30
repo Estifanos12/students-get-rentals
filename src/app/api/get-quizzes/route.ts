@@ -1,19 +1,16 @@
-import { connectToDB } from "@/lib/mongoClient";
-import Quiz from "@/models/quiz";
 import { NextResponse } from "next/server";
 
-export const GET = async (
-  req: Request,
-  { params }: { params: { quiz: string } }
-) => {
+import { connectToDB } from "@/lib/mongoClient";
+import Quiz from "@/models/quiz";
+
+export const GET = async (req: Request) => {
   await connectToDB();
-  const { quiz } = params;
+
+  const reqUrl = new URL(req.url);
+  const category = reqUrl.searchParams.get("category");
 
   try {
-    const response = await Quiz.find({ category: quiz }).select(
-      "-correct_option"
-    );
-
+    const response = await Quiz.find({ category }).select("-correct_option");
     if (response.length === 0) {
       return NextResponse.json(
         { message: "No quiz found", quiz: [] },

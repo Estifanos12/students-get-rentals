@@ -1,28 +1,21 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-import { createAvatar } from "@dicebear/core";
-import { initials } from "@dicebear/collection";
-
-import { Tooltip } from "../common/tooltip";
 import { Bio } from "./Bio";
+import { InitialsAvatar } from "../common/initials_avatar";
 
-export const Profile = ({ data }: any) => {
-  const avatar = createAvatar(initials, {
-    seed: data.fullname,
-    size: 40,
-    radius: 50,
-    backgroundColor: ["#43a047"],
-  });
+import { Badge } from "./badge";
 
-  const svg = avatar.toDataUriSync();
-
+const Profile = ({ data }: any) => {
   return (
     <section className="h-full flex-1">
       <div className="px-3 lg:max-w-7xl mx-auto space-y-8 py-12 lg:py-20 text-foreground">
         <div className="flex items-center gap-5">
-          <Image src={svg} alt="Profile" width={120} height={120} />
+          <InitialsAvatar
+            name={data.fullname}
+            className="w-[100px] h-[100px] "
+            fallbackClassName="text-lg md:text-2xl"
+          />
           <div className="flex items-center justify-between  w-full">
             <div>
               <h1 className="text-lg lg:text-xl font-semibold">
@@ -45,7 +38,12 @@ export const Profile = ({ data }: any) => {
         <div className="py-10">
           <Bio bio={data.bio} email={data.email} />
         </div>
+        <div className="py-10">
+          <Badge results={data.results} />
+        </div>
       </div>
     </section>
   );
 };
+
+export default Profile;

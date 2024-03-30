@@ -32,7 +32,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <Card className="p-7 dark:bg-transparent border-none outline outline-[1px] outline-primary">
+    <Card className="p-7 dark:bg-transparent border-none outline outline-[1px] outline-transparent shadow-lg dark:outline-primary">
       <CardTitle className="mb-4 text-lg md:text-xl text-foreground">
         Get in touch.
       </CardTitle>

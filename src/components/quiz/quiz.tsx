@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { redirect, useParams, useRouter } from "next/navigation";
+import { redirect, useParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
@@ -197,16 +197,13 @@ export const Quiz = ({ quiz }: QuizProps) => {
             </div>
           </div>
         </>
-      ) : (
-        <div className="w-full h-full flex justify-center items-center">
-          <h1>Cannot find with provided category</h1>
-        </div>
-      )}
+      ) : null}
 
       <ShowQuizResult
         setOpen={setOpenResult}
         result={result}
         open={openResult}
+        quiz={quiz}
       />
     </section>
   );

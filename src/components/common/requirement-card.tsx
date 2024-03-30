@@ -1,8 +1,5 @@
-"use client";
-
-import { useMemo } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 import HeadingText from "@/components/common/heading-text";
 import { requirements } from "@/config/contents";
@@ -12,17 +9,13 @@ import {
   CardFooter,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
-import { Button } from "../ui/button";
-import getScrollAnimation from "@/lib/getScrollAnimation";
-import ScrollAnimationWrapper from "./scroll-animation-wrapper";
+import { Button } from "@/components/ui/button";
+import Aos from "@/lib/aos";
 
 export default function Requirements() {
-  const scrollAnimation = useMemo(() => getScrollAnimation(), []);
-
   return (
-    <ScrollAnimationWrapper>
-      <motion.section id="requirements" variants={scrollAnimation}>
+    <>
+      <section id="requirements">
         <div className="container px-3 lg:max-w-7xl space-y-8 py-12 text-center lg:py-20">
           {requirements.header || requirements.subheader ? (
             <>
@@ -139,7 +132,7 @@ export default function Requirements() {
             </span>
           </div>
         </div>
-      </motion.section>
-    </ScrollAnimationWrapper>
+      </section>
+    </>
   );
 }

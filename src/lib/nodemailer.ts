@@ -7,8 +7,8 @@ import {
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.NEXT_PUBLIC_NODEMAILER_EMAIL,
-    pass: process.env.NEXT_PUBLIC_NODEMAILER_PASSWORD,
+    user: process.env.NODEMAILER_EMAIL,
+    pass: process.env.NODEMAILER_PASSWORD,
   },
 });
 
@@ -25,7 +25,7 @@ export const sendResetPasswordEmail = async ({
 }: emailProps) => {
   try {
     await transporter.sendMail({
-      from: process.env.NEXT_PUBLIC_NODEMAILER_EMAIL,
+      from: process.env.NODEMAILER_EMAIL,
       to,
       subject,
       html: compileResetEmailTemplate(text),
@@ -38,7 +38,7 @@ export const sendResetPasswordEmail = async ({
 export const sendOTPEmail = async ({ to, subject, text: otp }: emailProps) => {
   try {
     await transporter.sendMail({
-      from: process.env.NEXT_PUBLIC_NODEMAILER_EMAIL,
+      from: process.env.NODEMAILER_EMAIL,
       to,
       subject,
       html: compileSendOTPEmailTemplate(otp),

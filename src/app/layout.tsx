@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import { SessionProvider, ThemeProvider } from "./providers";
 
 import "./globals.css";
+import "aos/dist/aos.css";
 
 import { Toaster } from "@/components/ui/toaster";
 

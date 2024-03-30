@@ -17,9 +17,11 @@ type ShowQuizResultProps = {
   result: number;
   setResult?: React.Dispatch<React.SetStateAction<number>>;
   className?: string;
+  quiz: any;
 };
 
 export const ShowQuizResult = ({
+  quiz,
   open,
   result,
   className,
@@ -40,7 +42,8 @@ export const ShowQuizResult = ({
           <DialogHeader>
             <DialogTitle className="text-lg">Quiz Result</DialogTitle>
             <DialogDescription className="text-md">
-              Thank you for taking the quiz. You got {result} / 20
+              Thank you for taking the quiz. You got {result} / {quiz?.length} -{" "}
+              {((result / quiz?.length) * 100).toFixed(2)}% correct.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter className="flex flex-col">
@@ -51,14 +54,7 @@ export const ShowQuizResult = ({
               </i>
             </div>
             <DialogClose asChild>
-              <Button
-                type="button"
-                variant={"secondary"}
-                onClick={() => {
-                  setOpen(false);
-                  router.refresh();
-                }}
-              >
+              <Button type="button" variant={"secondary"}>
                 Close
               </Button>
             </DialogClose>

@@ -21,11 +21,19 @@
     line-height: 1.1;
   }
 
-  code {
-    background-color: rgba(#616161, 0.1);
-    color: #616161;
+  a {
+    text-decoration: underline;
+    color: #68cef8;
   }
 
+  code {
+    background-color: rgba(#616161, 0.1);
+    border-radius: 0.25em;
+    box-decoration-break: clone;
+    color: #616161;
+    font-size: 0.9rem;
+    padding: 0.25em;
+  }
   pre {
     background: #0d0d0d;
     color: #fff;

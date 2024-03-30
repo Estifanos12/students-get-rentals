@@ -1,25 +1,14 @@
-"use client";
-
-import { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { heroHeader } from "@/config/contents";
-import getScrollAnimation from "@/lib/getScrollAnimation";
-import ScrollAnimationWrapper from "./scroll-animation-wrapper";
 
 export default function HeroHeader() {
-  const scrollAnimation = useMemo(() => getScrollAnimation(), []);
-
   return (
-    <ScrollAnimationWrapper className="min-h-[calc(100vh-72px)] grid place-items-center">
-      <motion.section
-        className="lg:max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse md:justify-end gap-4 pb-12 pt-4 px-2 text-center lg:items-center lg:gap-10 lg:py-20"
-        variants={scrollAnimation}
-      >
+    <div className="min-h-[calc(100vh-72px)] grid place-items-center">
+      <section className="lg:max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse md:justify-end gap-4 pb-12 pt-4 px-2 text-center lg:items-center lg:gap-10 lg:py-20">
         <div className="flex flex-1 flex-col items-center gap-4 text-center lg:gap-8">
           <div className="space-y-5">
             <h1 className="text-3xl font-bold lg:text-5xl">
@@ -163,7 +152,7 @@ export default function HeroHeader() {
         ) : (
           <></>
         )}
-      </motion.section>
-    </ScrollAnimationWrapper>
+      </section>
+    </div>
   );
 }

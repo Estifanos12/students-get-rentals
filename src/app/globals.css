@@ -86,3 +86,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.scroll-container {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

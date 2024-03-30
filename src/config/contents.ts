@@ -5,10 +5,14 @@ import {
   FaPhone,
   FaClock,
   FaLocationArrow,
+  FaMoneyBill,
+  FaGlobe,
 } from "react-icons/fa";
+
+import { MdEco } from "react-icons/md";
 import { LuMicrowave } from "react-icons/lu";
 import { HiHomeModern } from "react-icons/hi2";
-import { FaP, FaPeopleGroup } from "react-icons/fa6";
+import { FaPeopleGroup } from "react-icons/fa6";
 import { ImConnection } from "react-icons/im";
 
 import { HeroHeader, ContentSection, Contact, FAQ } from "@/types/contents";
@@ -54,6 +58,30 @@ export const requirements: ContentSection = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       image: "/neighbor-management.webp",
       link: "/courses/neighbor-managment",
+    },
+    {
+      text: `Appliances`,
+      subtext: `Lorem ipsum dolor sit amet, consectetur,`,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "/appliances.jpg",
+      link: "/courses/appliances",
+    },
+    {
+      text: `Pest Control`,
+      subtext: `Lorem ipsum dolor sit amet, consectetur,`,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "/pest_control.jpeg",
+      link: "/courses/pest-control",
+    },
+    {
+      text: `Credit Score and References`,
+      subtext: `Lorem ipsum dolor sit amet, consectetur,`,
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      image: "/credit_score.webp",
+      link: "/courses/credit-score",
     },
   ],
 };
@@ -185,22 +213,22 @@ export const offer = {
   },
   content: [
     {
-      text: `Lorem Ipsum`,
-      icon: FaPeopleGroup,
+      text: `Enhanced Accessibility and Affordability`,
+      icon: FaMoneyBill,
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil quisquam quibusdam modi sapiente magni molestias pariatur facilis reprehenderit facere aliquam ex.",
+        "Rental services have made it easier for students to find accommodations that fit their budget and preferences. By offering a wide range of options—from shared apartments to single rooms—these platforms ensure that students can secure housing that doesn't break the bank, thereby reducing the financial burden of higher education.",
     },
     {
-      text: `Lorem Ipsum`,
-      icon: FaPeopleGroup,
+      text: `Increased Mobility and International Opportunities`,
+      icon: FaGlobe,
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil quisquam quibusdam modi sapiente magni molestias pariatur facilis reprehenderit facere aliquam ex.",
+        "For students studying abroad or participating in exchange programs, these rental services have simplified the process of finding accommodations in foreign countries. By offering rooms in multiple cities and countries, these platforms facilitate mobility and open up new educational and cultural experiences for students.",
     },
     {
-      text: `Lorem Ipsum`,
-      icon: FaPeopleGroup,
+      text: `Sustainability and Eco-friendly Living Options`,
+      icon: MdEco,
       description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil quisquam quibusdam modi sapiente magni molestias pariatur facilis reprehenderit facere aliquam ex.",
+        "Acknowledging the growing concern for environmental sustainability among students, some rental services now feature eco-friendly living options. These include accommodations with green technologies, energy-efficient systems, and communal living arrangements that reduce carbon footprints, aligning with the values of environmentally conscious students.",
     },
     {
       text: `Lorem Ipsum`,
@@ -210,3 +238,36 @@ export const offer = {
     },
   ],
 };
+
+export const courses = [
+  {
+    key: "appliances",
+    label: "Appliances",
+    link: "/courses/appliances/take-quiz",
+  },
+  {
+    key: "how-to-clean",
+    label: "Basic House Cleaning System",
+    link: "/courses/basic-housing-cleaning/take-quiz",
+  },
+  {
+    key: "house_maintainance",
+    label: "Basic House maintenance and knowledge",
+    link: "/courses/basic-house-maintainance/take-quiz",
+  },
+  {
+    key: "neighbor_management",
+    label: "Neighbor Management",
+    link: "/courses/neighbor-managment/take-quiz",
+  },
+  {
+    key: "pest_control",
+    label: "Pest Control",
+    link: "/courses/pest-control/take-quiz",
+  },
+  {
+    key: "credit_scores_and_references",
+    label: "Credit Scores and References",
+    link: "/courses/credit-score/take-quiz",
+  },
+];

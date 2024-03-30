@@ -1,5 +1,6 @@
 {
-    "credit": "Credit Score",
-    "reference": "Landlord Reference",
-    "index": "Summary"
+  "index": "Introduction",
+  "credit": "Credit Score",
+  "reference": "Landlord Reference",
+  "summary": "Summary"
 }

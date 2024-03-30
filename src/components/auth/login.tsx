@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -50,7 +49,6 @@ const LoginForm = () => {
       });
 
       if (!response?.ok) {
-        console.log(response?.error);
         toast({
           title: "Login failed",
           variant: "destructive",

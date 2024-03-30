@@ -1,6 +1,7 @@
 {
-    "dryer": "Dryer",
-    "the-refrigerator": "Refrigerator",
-    "the-washing-machine": "Washing Machine",
-    "toilet": "Toilet"
+  "index": "Introduction",
+  "dryer": "Dryer",
+  "the-refrigerator": "Refrigerator",
+  "the-washing-machine": "Washing Machine",
+  "toilet": "Toilet"
 }
