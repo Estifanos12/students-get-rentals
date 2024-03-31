@@ -30,7 +30,7 @@ export const UserProfile = () => {
       <DropdownMenu>
         <DropdownMenuTrigger className="focus:border-primary focus:outline-primary">
           <button>
-            <InitialsAvatar name={session.user.fullname} />
+            <InitialsAvatar name={session.user.fullname || session.user.name} />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="absolute -right-5 w-64 text-md dark:bg-gray-800 outline-none border-none">

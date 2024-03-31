@@ -10,6 +10,7 @@ export const InitialsAvatar = ({
   className?: string;
   fallbackClassName?: string;
 }) => {
+  console.log(name);
   return (
     <Avatar className={cn("bg-primary", className)}>
       <AvatarFallback
@@ -18,7 +19,7 @@ export const InitialsAvatar = ({
           fallbackClassName
         )}
       >
-        {name.slice(0, 2)}
+        {name ? name.slice(0, 2) : ""}
       </AvatarFallback>
     </Avatar>
   );
