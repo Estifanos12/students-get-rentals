@@ -128,7 +128,7 @@ const MobileNav = ({ className }: { className?: string }) => {
                 status === "authenticated" ? (
                   <Link
                     href={link.href! || ""}
-                    className="text-xl font-bold tracking-widest text-white w-full text-start"
+                    className="text-xl font-bold tracking-widest text-gray-900 dark:text-gray-100 w-full text-start"
                     onClick={onToggleNav}
                   >
                     {link.title}
