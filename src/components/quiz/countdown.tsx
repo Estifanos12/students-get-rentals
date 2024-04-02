@@ -1,12 +1,8 @@
 "use client";
 
 import { formatTime } from "@/lib/formatTime";
-import { useCountdown } from "@/hooks/useCountdown";
-import { Button } from "../ui/button";
 
-export const Countdown = () => {
-  const { countdown } = useCountdown(3600);
-
+export const Countdown = ({ countdown }) => {
   return (
     <div>
       <p className="text-foreground text-right text-lg">

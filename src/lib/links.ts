@@ -15,9 +15,6 @@ export const navLinks = [
     route: "Contact Us",
     path: "/#contacts",
   },
-  {
-    route: "Log Out",
-  },
 ];
 
 export const socialLinks = [

@@ -16,6 +16,8 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { ImConnection } from "react-icons/im";
 
 import { HeroHeader, ContentSection, Contact, FAQ } from "@/types/contents";
+import { IconType } from "react-icons/lib";
+import { signOut } from "next-auth/react";
 
 /* ====================
 [> CUSTOMIZING CONTENT <]
@@ -26,10 +28,198 @@ import { HeroHeader, ContentSection, Contact, FAQ } from "@/types/contents";
 export const heroHeader: HeroHeader = {
   header: `Students Get Rentals`,
   subheader: `Platform for students to get rentals`,
-  image: `/student-jumping.png`,
+  image: `/hero.png`,
   description:
     "We help you get your rental! Go through our short online training system, get our badges, and sign up for the roommateTools.shop software , and it will put you head and sholders above the others looking to rent the house!",
 };
+
+export const nav_requirements: {
+  title: string;
+  href: string;
+  description: string;
+}[] = [
+  {
+    title: `Basic house cleaning system`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    href: "/courses/basic-housing-cleaning",
+  },
+  {
+    title: `Basic house maintenance knowlege`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    href: "/courses/basic-house-maintainance",
+  },
+  {
+    title: `Neighbour management`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    href: "/courses/neighbor-managment",
+  },
+  {
+    title: `Appliances`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    href: "/courses/appliances",
+  },
+  {
+    title: `Pest Control`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    href: "/courses/pest-control",
+  },
+  {
+    title: `Credit Score and References`,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    href: "/courses/credit-score",
+  },
+];
+
+export const mobile_nav_links: {
+  title: string;
+  href?: string;
+  onClick?: () => void;
+  content?: {
+    title: string;
+    href: string;
+    icon?: IconType;
+  }[];
+}[] = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Requirements",
+    content: [
+      {
+        title: `Basic house cleaning system`,
+        href: "/courses/basic-housing-cleaning",
+      },
+      {
+        title: `Basic house maintenance knowlege`,
+        href: "/courses/basic-house-maintainance",
+      },
+      {
+        title: `Neighbour management`,
+        href: "/courses/neighbor-managment",
+      },
+      {
+        title: `Appliances`,
+        href: "/courses/appliances",
+      },
+      {
+        title: `Pest Control`,
+        href: "/courses/pest-control",
+      },
+      {
+        title: `Credit Score and References`,
+        href: "/courses/credit-score",
+      },
+    ],
+  },
+  {
+    title: "Services",
+    content: [
+      {
+        title: `Furnished Room Options`,
+        icon: HiHomeModern,
+        href: "/services/furnished-room-options",
+      },
+      {
+        title: `Study and Collaboration Spaces`,
+        icon: FaHammer,
+        href: "/services/study-and-collaboration-spaces",
+      },
+      {
+        title: `Monthly Cleaning Services`,
+        icon: FaPersonBooth,
+        href: "/services/monthly-cleaning-services",
+      },
+      {
+        title: `24/7 Maintenance and Support`,
+        icon: LuMicrowave,
+        href: "/services/maintenance-and-support",
+      },
+      {
+        title: `Utility and Internet Inclusion`,
+        icon: ImConnection,
+        href: "/services/utility-and-internet-inclusion",
+      },
+      {
+        title: `Community Events and Workshops`,
+        icon: FaPeopleGroup,
+        href: "/services/community-events-and-workshops",
+      },
+    ],
+  },
+  {
+    title: "Contact Us",
+    href: "/#contacts",
+  },
+  {
+    title: "Profile",
+    href: "/profile",
+  },
+  {
+    title: "Logout",
+    onClick: signOut,
+  },
+  {
+    title: "Sign In",
+    href: "/login",
+  },
+];
+export const nav_services: {
+  title: string;
+  href: string;
+  description: string;
+  icon: IconType;
+}[] = [
+  {
+    title: `Furnished Room Options`,
+    icon: HiHomeModern,
+    href: "/services/furnished-room-options",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    title: `Study and Collaboration Spaces`,
+    icon: FaHammer,
+    href: "/services/study-and-collaboration-spaces",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    title: `Monthly Cleaning Services`,
+    icon: FaPersonBooth,
+    href: "/services/monthly-cleaning-services",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    title: `24/7 Maintenance and Support`,
+    icon: LuMicrowave,
+    href: "/services/maintenance-and-support",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    title: `Utility and Internet Inclusion`,
+    icon: ImConnection,
+    href: "/services/utility-and-internet-inclusion",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    title: `Community Events and Workshops`,
+    icon: FaPeopleGroup,
+    href: "/services/community-events-and-workshops",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+];
 
 export const requirements: ContentSection = {
   header: `Requirements`,
@@ -40,7 +230,7 @@ export const requirements: ContentSection = {
       subtext: `Lorem ipsum dolor sit amet, consectetur,`,
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      image: "/basic-house-cleaning.webp",
+      image: "/basic_cleaning.jpg",
       link: "/courses/basic-housing-cleaning",
     },
     {
@@ -48,7 +238,7 @@ export const requirements: ContentSection = {
       subtext: `Lorem ipsum dolor sit amet, consectetur,`,
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      image: "/home-repair.jpg",
+      image: "/maintainance.jpg",
       link: "/courses/basic-house-maintainance",
     },
     {
@@ -56,7 +246,7 @@ export const requirements: ContentSection = {
       subtext: `Lorem ipsum dolor sit amet, consectetur,`,
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      image: "/neighbor-management.webp",
+      image: "/neighbor.jpg",
       link: "/courses/neighbor-managment",
     },
     {
@@ -64,7 +254,7 @@ export const requirements: ContentSection = {
       subtext: `Lorem ipsum dolor sit amet, consectetur,`,
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      image: "/appliances.jpg",
+      image: "/basic_appliance.jpg",
       link: "/courses/appliances",
     },
     {
@@ -72,7 +262,7 @@ export const requirements: ContentSection = {
       subtext: `Lorem ipsum dolor sit amet, consectetur,`,
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      image: "/pest_control.jpeg",
+      image: "/pest_control.jpg",
       link: "/courses/pest-control",
     },
     {
@@ -80,7 +270,7 @@ export const requirements: ContentSection = {
       subtext: `Lorem ipsum dolor sit amet, consectetur,`,
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      image: "/credit_score.webp",
+      image: "/credit.jpg",
       link: "/courses/credit-score",
     },
   ],

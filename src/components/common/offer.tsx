@@ -5,16 +5,18 @@ import Image from "next/image";
 import HeadingText from "@/components/common/heading-text";
 import { StickyScroll } from "./stick_container";
 import { offer } from "@/config/contents";
+import { OfferMobile } from "./offer_mobile";
 
 const content = [
   {
-    title: "Enhanced Accessibility and Affordability",
+    title:
+      "The Queue Quagmire: Students Frustration with Previous Rental Service",
     description:
-      "Rental services have made it easier for students to find accommodations that fit their budget and preferences. By offering a wide range of options—from shared apartments to single rooms—these platforms ensure that students can secure housing that doesn't break the bank, thereby reducing the financial burden of higher education.",
+      "As rental services struggle to keep up with demand, students find themselves embroiled in lengthy queues, leading to widespread dissatisfaction. This frustration isn't just about the wait; it's the feeling of being stuck in a system that seems indifferent to their time and needs. This growing discontent highlights the need for more efficient, student-friendly rental solutions that can alleviate the queue-induced angst and improve the overall rental experience.",
     content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
+      <div className="h-full w-full flex items-center justify-center text-white">
         <Image
-          src="/affordable.jpg"
+          src="/student_queue.jpg"
           width={450}
           height={450}
           className="rounded-lg shadow-lg"
@@ -24,45 +26,14 @@ const content = [
     ),
   },
   {
-    title: "Increased Mobility and International Opportunities",
+    title:
+      "Rental Revolution: How Our New Services Are Winning Over Students Hearts",
     description:
-      "For students studying abroad or participating in exchange programs, these rental services have simplified the process of finding accommodations in foreign countries. By offering rooms in multiple cities and countries, these platforms facilitate mobility and open up new educational and cultural experiences for students.",
+      "The advent of innovative rental services has sparked a wave of enthusiasm among students, transforming their rental experiences from mundane to marvelous. With features tailored to their preferences and needs, these services are not just meeting but exceeding expectations. Students are now reveling in the convenience, affordability, and variety offered, making the once-dreaded process of renting a joyous occasion. This shift not only reflects the success of customer-centric approaches but also marks a new chapter in how rental services engage with the younger generation.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <Image
-          src="/mobility.jpg"
-          width={450}
-          height={440}
-          className="w-[450px] h-[450px] rounded-lg shadow-lg"
-          alt="linear board demo"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "Community and Support Services",
-    description:
-      "Many student room rental services go beyond just providing a place to stay; they foster a sense of community among residents through organized events and social spaces. Additionally, some services offer support in the form of academic resources, mental health counseling, and career guidance, contributing to the overall well-being and success of students.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/community.jpg"
-          width={450}
-          height={450}
-          className="rounded-lg shadow-lg"
-          alt="linear board demo"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "Flexibility in Lease Terms",
-    description:
-      "Traditional rental agreements often locked students into long-term commitments that were not always aligned with their academic calendars. Modern rental services offer more flexible lease terms, allowing students to rent rooms for shorter durations—such as a semester or an academic year—thereby providing accommodations that better suit their transient lifestyles.",
-    content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
-          src="/agreement.jpg"
+          src="/happy_student.jpg"
           width={450}
           height={440}
           className="rounded-lg shadow-lg"
@@ -86,7 +57,8 @@ export default function Offer() {
       ) : null}
 
       <div className="my-16 ">
-        <StickyScroll content={content} />
+        <StickyScroll content={content} className="hidden md:flex" />
+        <OfferMobile content={content} className="grid md:hidden" />
       </div>
     </section>
   );

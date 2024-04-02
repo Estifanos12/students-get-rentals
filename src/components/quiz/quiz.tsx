@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 
 import { useBeforeUnload } from "@/hooks/useBeforeUnload";
+import { useCountdown } from "@/hooks/useCountdown";
 import { Countdown } from "./countdown";
 import { QuizContent } from "./quiz-content";
 import { Button } from "../ui/button";
@@ -41,6 +42,7 @@ export const Quiz = ({ quiz }: QuizProps) => {
       redirect("/login?callbackUrl=/quiz");
     },
   });
+  const { countdown } = useCountdown(3600);
 
   useEffect(() => {
     isMounted.current = true;
@@ -65,10 +67,8 @@ export const Quiz = ({ quiz }: QuizProps) => {
         toast({
           title: "Successfully submitted your answers!",
         });
-
-        setOpenResult(true);
         setResult(response.result as number);
-
+        setOpenResult(true);
         return;
       }
       if (response.message === "Error") {
@@ -88,6 +88,12 @@ export const Quiz = ({ quiz }: QuizProps) => {
       setSubmitModal(false);
     }
   }, [answers, session]);
+
+  useEffect(() => {
+    if (countdown === 0 && !openResult) {
+      handleSubmission();
+    }
+  }, [countdown, handleSubmission]);
 
   const paginate = (newDirection: number) => {
     setDirection([page + newDirection, newDirection]);
@@ -109,11 +115,25 @@ export const Quiz = ({ quiz }: QuizProps) => {
     );
   }
 
+  if (loading && submitModal === false) {
+    return (
+      <div className="flex justify-center items-center">
+        <Image
+          src={"/loading.svg"}
+          alt="Loading"
+          width={80}
+          height={80}
+          className="animate-spin"
+        />
+      </div>
+    );
+  }
+
   return (
     <section className="px-3 lg:max-w-7xl mx-auto space-y-8 py-12 text-center lg:mb-20 overflow-hidden">
       {quiz.length ? (
         <>
-          <Countdown />
+          <Countdown countdown={countdown} />
           <div className="flex flex-col lg:flex-row gap-7 items-center lg:items-stretch">
             <div className="flex-[5] flex flex-col gap-10">
               <AnimatePresence initial={false} custom={direction} mode="wait">

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
-
 import { Bio } from "./Bio";
 import { InitialsAvatar } from "../common/initials_avatar";
 

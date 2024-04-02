@@ -12,6 +12,7 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import Image from "@tiptap/extension-image";
 import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
+import { generateHTML } from "@tiptap/html";
 
 import {
   FaBold,
@@ -310,7 +311,7 @@ const MenuBar = ({ editor }) => {
   );
 };
 
-const extensions = [
+export const extensions = [
   Color.configure({ types: [TextStyle.name, ListItem.name] }),
   TextStyle.configure({ types: [ListItem.name] }),
   StarterKit.configure({
@@ -360,7 +361,7 @@ export const TextEditor = ({ editable, bio, setBio }) => {
     extensions: extensions,
     content: bio || content,
     onUpdate: ({ editor }) => {
-      setBio(editor.getHTML());
+      setBio(editor.getJSON());
     },
     editorProps: {
       attributes: {
@@ -376,7 +377,6 @@ export const TextEditor = ({ editable, bio, setBio }) => {
     editor.setEditable(editable);
   }, [editor, editable]);
 
-  console.log(bio);
   return (
     <>
       {editable && <MenuBar editor={editor} />}

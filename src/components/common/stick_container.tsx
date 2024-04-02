@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 export const StickyScroll = ({
   content,
   contentClassName,
+  className,
 }: {
   content: {
     title: string;
@@ -15,6 +16,7 @@ export const StickyScroll = ({
     content?: React.ReactNode | any;
   }[];
   contentClassName?: string;
+  className?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
   const ref = useRef<any>(null);
@@ -43,7 +45,10 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      className="h-[35rem]  overflow-y-auto scroll-container flex justify-center relative space-x-10 rounded-md px-0 py-10 mt-20 mb-10"
+      className={cn(
+        "h-[35rem]  overflow-y-auto scroll-container flex justify-center relative space-x-10 rounded-md py-10 mt-20 mb-10",
+        className
+      )}
       ref={ref}
     >
       <div className="div relative flex justify-center flex-1 md:items-start px-4 md:justify-start ">

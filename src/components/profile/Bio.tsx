@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 
-import { TextEditor } from "./text-editor";
+import { extensions, TextEditor } from "./text-editor";
 import { Button } from "../ui/button";
 import { updateBio } from "@/actions/update_bio";
 import { toast } from "../ui/use-toast";
+import { uploadImage } from "@/actions/upload_image";
+import { generateHTML } from "@tiptap/html";
 
 export const Bio = ({ bio, email }) => {
   const [currentBio, setCurrentBio] = useState(bio);
@@ -22,19 +24,61 @@ export const Bio = ({ bio, email }) => {
 
   const handleSave = async () => {
     setLoading(true);
-    const response = await updateBio(email, currentBio);
-    if (response.success === true) {
+    let images = [];
+    if (currentBio instanceof Object) {
+      if (currentBio.content.length > 0) {
+        currentBio.content.map((content) => {
+          if (content.type === "image") images.push(content.attrs.src);
+        });
+      }
+
+      if (images.length > 0) {
+        const response = await uploadImage(images);
+        if (response.success === false) {
+          toast({
+            title: response.message,
+            variant: "destructive",
+          });
+          return;
+        }
+
+        let uploadedImages = response.images;
+        const jsonContent = currentBio.content.map((content) => {
+          if (content.type === "image") {
+            content.attrs.src = uploadedImages.shift().secure_url;
+          }
+          return content;
+        });
+        setCurrentBio({ ...currentBio, content: jsonContent });
+      }
+    }
+    try {
+      let bio: string;
+      if (currentBio instanceof Object) {
+        bio = generateHTML(currentBio, extensions);
+      } else {
+        bio = currentBio;
+      }
+      const response = await updateBio(email, bio);
+      if (response.success === true) {
+        toast({
+          title: response.message,
+        });
+      } else {
+        toast({
+          title: response.message,
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
       toast({
-        title: response.message,
-      });
-    } else {
-      toast({
-        title: response.message,
+        title: "Error updating bio",
         variant: "destructive",
       });
+    } finally {
+      setLoading(false);
+      setEditable(false);
     }
-    setLoading(false);
-    setEditable(false);
   };
 
   return (

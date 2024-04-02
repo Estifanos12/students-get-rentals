@@ -22,7 +22,7 @@ import { TLogin } from "@/types";
 import { CardWrapper } from "../common/card_wrapper";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import placeholderImage from "../../../public/placeholder.webp";
+import Auth_Background from "../../../public/auth_bg.jpg";
 
 import { toast } from "../ui/use-toast";
 
@@ -178,7 +178,7 @@ const LoginForm = () => {
       <div className="relative hidden w-0 flex-[1.5] lg:block">
         <Image
           className="absolute inset-0 w-full h-full object-cover"
-          src={placeholderImage}
+          src={Auth_Background}
           alt=""
           objectFit="cover"
         />

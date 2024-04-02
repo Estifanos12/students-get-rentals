@@ -26,9 +26,9 @@ export default function HeroHeader() {
             <Link
               href={"/"}
               target="_blank"
-              className="shadow-2xl p-3 rounded-xl flex items-center gap-2 hover:bg-primary group"
+              className="shadow-2xl p-3 rounded-md flex items-center gap-2 hover:bg-primary group transition-all duration-500"
             >
-              <span className="text-foreground group-hover:text-white">
+              <span className="text-foreground group-hover:text-white transition-colors duration-500">
                 Review us on{" "}
               </span>
               <Image
@@ -42,9 +42,9 @@ export default function HeroHeader() {
             <Link
               href={"/"}
               target="_blank"
-              className="shadow-2xl p-3 rounded-xl flex items-center gap-2 hover:bg-primary group"
+              className="shadow-2xl p-3 rounded-md flex items-center gap-2 hover:bg-primary group transition-all duration-500"
             >
-              <span className="text-foreground group-hover:text-white">
+              <span className="text-foreground group-hover:text-white transition-colors duration-500">
                 Review us on
               </span>
               <Image
@@ -71,13 +71,13 @@ export default function HeroHeader() {
             <div className="relative">
               <Image
                 src={heroHeader.image}
-                width={600}
-                height={600}
+                width={500}
+                height={500}
                 alt="Header image"
                 // className='shadow-2xl border-transparent rounded-xl '
               />
 
-              <span className="hidden md:block absolute top-0 right-10 z-[-1] animate-floating">
+              <span className="hidden md:block absolute top-0 -right-8 z-[-1] animate-floating">
                 <svg
                   width="93"
                   height="93"
@@ -112,7 +112,7 @@ export default function HeroHeader() {
                   <circle cx="90.5" cy="90.5" r="2.5" fill="#2dac5c" />
                 </svg>
               </span>
-              <span className="hidden md:block absolute -bottom-8 left-8 z-[-1] animate-floating">
+              <span className="hidden md:block absolute -bottom-8 -left-8 z-[-1] animate-floating">
                 <svg
                   width="93"
                   height="93"

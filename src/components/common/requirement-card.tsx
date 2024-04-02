@@ -33,7 +33,7 @@ export default function Requirements() {
                 >
                   <div className="flex relative w-full h-[15rem]">
                     <Image
-                      src={cards?.image}
+                      src={cards?.image!}
                       alt={cards.text}
                       layout="fill"
                       objectFit="cover"
@@ -50,7 +50,9 @@ export default function Requirements() {
                     </CardDescription>
                     <CardFooter className="flex justify-end pt-3">
                       <Link href={cards.link || "/"} target="_blank">
-                        <Button className="text-white">More details</Button>
+                        <Button className="text-white rounded-2xl">
+                          More details
+                        </Button>
                       </Link>
                     </CardFooter>
                   </div>
