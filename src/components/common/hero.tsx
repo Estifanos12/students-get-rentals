@@ -7,7 +7,7 @@ import { heroHeader } from "@/config/contents";
 
 export default function HeroHeader() {
   return (
-    <div className="min-h-[calc(100vh-72px)] grid place-items-center">
+    <div className="min-h-[calc(100vh-110px)] grid place-items-center mb-28">
       <section className="lg:max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse md:justify-end gap-4 pb-12 pt-4 px-2 text-center lg:items-center lg:gap-10 lg:py-20">
         <div className="flex flex-1 flex-col items-center gap-4 text-center lg:gap-8">
           <div className="space-y-5">

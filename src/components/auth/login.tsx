@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signIn } from "next-auth/react";
@@ -27,6 +27,9 @@ import Auth_Background from "../../../public/auth_bg.jpg";
 import { toast } from "../ui/use-toast";
 
 const LoginForm = () => {
+  const searchParams = useSearchParams();
+  const callback = searchParams.get("callbackUrl");
+
   const router = useRouter();
   const form = useForm<TLogin>({
     resolver: zodResolver(loginSchema),
@@ -59,7 +62,7 @@ const LoginForm = () => {
         title: "Login Successfully",
         description: "You successfull logged in",
       });
-      router.push("/");
+      router.push(callback || "/");
     } catch (error) {
       toast({
         title: "Login failed",

@@ -28,14 +28,18 @@ export function NavigationBar({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        "w-full lg:max-w-7xl mx-auto flex items-center justify-between p-6",
+        "w-full lg:max-w-7xl mx-auto flex items-center justify-between px-6 ",
         className
       )}
     >
       <Link href={"/"}>
-        <h1 className="text-xl font-bold text-foreground">
-          Student Get Rentals.
-        </h1>
+        <Image
+          src={"/logo.svg"}
+          width={110}
+          height={110}
+          alt="Student Get Rentals"
+          className=""
+        />
       </Link>
       <NavigationMenu>
         <NavigationMenuList>

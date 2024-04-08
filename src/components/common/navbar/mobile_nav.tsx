@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   Collapsible,
@@ -34,9 +35,15 @@ const MobileNav = ({ className }: { className?: string }) => {
 
   return (
     <header className={cn(className)}>
-      <div className="p-5 flex items-center justify-between">
-        <Link href={"/"} className="text-lg text-foreground">
-          Students Get Rentals
+      <div className="pr-5 flex items-center justify-between">
+        <Link href={"/"}>
+          <Image
+            src={"/logo.svg"}
+            width={110}
+            height={110}
+            alt="Student Get Rentals"
+            className=""
+          />
         </Link>
         <div className="flex items-center gap-0.5">
           <ThemeSwitch />
@@ -115,7 +122,7 @@ const MobileNav = ({ className }: { className?: string }) => {
               ) : status === "loading" ? null : link.onClick ? (
                 status === "authenticated" ? (
                   <Button
-                    className="text-xl font-bold tracking-widest text-gray-900 dark:text-gray-100 w-full text-start mt-auto"
+                    className="text-xl font-bold tracking-widest w-full text-start mt-auto text-white"
                     onClick={() => {
                       onToggleNav();
                       link.onClick?.();

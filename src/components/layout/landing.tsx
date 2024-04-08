@@ -10,12 +10,12 @@ export default function LandingPage() {
   return (
     <>
       <Hero />
-      <Requirments />
+      {/* <Requirments />
       <Services />
       <CTA />
       <Offer />
       <Contact />
-      <FAQ />
+      <FAQ /> */}
     </>
   );
 }

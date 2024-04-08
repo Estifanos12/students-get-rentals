@@ -146,6 +146,12 @@ export const authOptions: NextAuthOptions = {
       session.user = token.user;
       return session;
     },
+
+    async redirect({ url, baseUrl }) {
+      console.log(baseUrl);
+
+      return baseUrl;
+    },
   },
   pages: {},
   debug: process.env.NODE_ENV === "development",

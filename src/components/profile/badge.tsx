@@ -3,7 +3,6 @@ import Link from "next/link";
 import { courses } from "@/config/contents";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { Tooltip } from "../common/tooltip";
 import Image from "next/image";
 
 export const Badge = ({ results }) => {
@@ -28,9 +27,9 @@ export const Badge = ({ results }) => {
                   <div className="flex items-center gap-2">
                     <Image
                       src={
-                        result.best_score < 5
+                        result.best_score / result.no_of_questions < 0.5
                           ? "/bronze_badge.svg"
-                          : result.best_score < 8
+                          : result.best_score / result.no_of_questions < 0.8
                           ? "/silver_badge.svg"
                           : "/golden_badge.svg"
                       }
@@ -40,9 +39,9 @@ export const Badge = ({ results }) => {
                     />
 
                     <span>
-                      {result.best_score < 5
+                      {result.best_score / result.no_of_questions < 0.5
                         ? "Bronze badge"
-                        : result.best_score < 8
+                        : result.best_score / result.no_of_questions < 0.8
                         ? "Silver badge"
                         : "Golden badge"}
                     </span>

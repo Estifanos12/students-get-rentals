@@ -312,5 +312,134 @@
     ],
     "correct_option": "D",
     "category": "pest_control"
+  },
+  {
+    "question": "What are the 5 common reasons Neighbours get into conflict?",
+    "options": [
+      { "value": "A", "text": "noise, pets, parking, maintenance, privacy" },
+      { "value": "B", "text": "borrowing money, parties, and jealousy" },
+      { "value": "C", "text": "Neighbours don’t get into conflict" }
+    ],
+    "correct_option": "A",
+    "category": "neighbor_management"
+  },
+  {
+    "question": "What should you do when you get new neighbours?",
+    "options": [
+      {
+        "value": "A",
+        "text": "introduce yourself, communicate, be considerate, respect boundaries, offer help"
+      },
+      {
+        "value": "B",
+        "text": "participate in community activities, be open and inclusive, handle disputes calmly"
+      },
+      {
+        "value": "C",
+        "text": "share important information and show appreciation, respect privacy"
+      },
+      { "value": "D", "text": "all of the above" }
+    ],
+    "correct_option": "D",
+    "category": "neighbor_management"
+  },
+  {
+    "question": "What are the major systems you need to keep in mind when you rent a house?",
+    "options": [
+      {
+        "value": "A",
+        "text": "roof, gutters, windows, HVAC, plumbing, smoke detectors, lawn and garden, appliances, water tank, exterior, pest control, safety equipment"
+      },
+      { "value": "B", "text": "carpets, counter tops, and walls" },
+      {
+        "value": "C",
+        "text": "none, it all is the responsibility of the homeowner"
+      }
+    ],
+    "correct_option": "A",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "What is the most common source of problems in plumbing?",
+    "options": [
+      { "value": "A", "text": "leaks" },
+      { "value": "B", "text": "loss of hot water" },
+      { "value": "C", "text": "clogs" }
+    ],
+    "correct_option": "C",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "In the kitchen, what can cause troubles in that drain in particular?",
+    "options": [
+      { "value": "A", "text": "food in drain" },
+      { "value": "B", "text": "grease" },
+      { "value": "C", "text": "rice in drain" }
+    ],
+    "correct_option": "B",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "What helps kitchen sinks?",
+    "options": [
+      { "value": "A", "text": "cold water" },
+      { "value": "B", "text": "hydrochloric acid" },
+      { "value": "C", "text": "baking soda and vinegar" }
+    ],
+    "correct_option": "C",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "What is a hot water flush?",
+    "options": [
+      { "value": "A", "text": "used to clean linoleum floors" },
+      { "value": "B", "text": "used in the hot water tank clean out" },
+      { "value": "C", "text": "put hot water down kitchen and bathroom drains" }
+    ],
+    "correct_option": "C",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "What is one-bathroom practice to help the plumbing systems?",
+    "options": [
+      { "value": "A", "text": "clean bathroom daily" },
+      { "value": "B", "text": "use bleach in toilet" },
+      { "value": "C", "text": "using hair catchers" }
+    ],
+    "correct_option": "C",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "How do you turn off the power in the house?",
+    "options": [
+      { "value": "A", "text": "turn off the main breaker" },
+      { "value": "B", "text": "call the city to turn off electricity" },
+      { "value": "C", "text": "use the tripartied fuse" }
+    ],
+    "correct_option": "A",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "What is the purpose of a household circuit breaker?",
+    "options": [
+      { "value": "A", "text": "reduce the electrical usage" },
+      { "value": "B", "text": "prevent electrical circuit overload" },
+      { "value": "C", "text": "stop the polarity change in surges" }
+    ],
+    "correct_option": "B",
+    "category": "house_maintainance"
+  },
+  {
+    "question": "What are signs of Furnace problems?",
+    "options": [
+      {
+        "value": "A",
+        "text": "soot, or dust, strange smells, water leaks, carbon monoxide detector alerts, unusual noises, frequent cycling, increased heating bills, inadequate heat output, yellow pilot light, all the above"
+      },
+      { "value": "B", "text": "none of the above" },
+      { "value": "C", "text": "not applicable" }
+    ],
+    "correct_option": "A",
+    "category": "house_maintainance"
   }
 ]

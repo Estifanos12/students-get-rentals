@@ -1,6 +1,4 @@
 import { Quiz } from "@/components/quiz/quiz";
-import { connectToDB } from "@/lib/mongoClient";
-import QuizModel from "@/models/quiz";
 
 type QuizPageProps = {
   params: {
@@ -20,6 +18,7 @@ const QuizPage = async ({ params: { category } }: QuizPageProps) => {
   );
   const data = await response.json();
 
+  console.log(category);
   console.log(data);
 
   if (data.quiz.length === 0) {

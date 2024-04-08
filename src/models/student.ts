@@ -5,6 +5,10 @@ const resultSchema = new Schema({
     type: String,
     required: true,
   },
+  no_of_questions: {
+    type: Number,
+    required: true,
+  },
   scores: {
     type: [Number],
     required: true,
@@ -40,12 +44,13 @@ const studentSchema = new Schema(
       default: false,
     },
     results: {
-      //catefory and score
+      //category and score
       type: [resultSchema],
 
       default: [
         {
           category: "appliances",
+          no_of_questions: 10,
           scores: [],
           best_score: 0,
           worst_score: 0,
@@ -55,6 +60,7 @@ const studentSchema = new Schema(
         },
         {
           category: "how-to-clean",
+          no_of_questions: 7,
           scores: [],
           best_score: 0,
           worst_score: 0,
@@ -64,6 +70,7 @@ const studentSchema = new Schema(
         },
         {
           category: "credit_scores_and_references",
+          no_of_questions: 4,
           scores: [],
           best_score: 0,
           worst_score: 0,
@@ -73,6 +80,7 @@ const studentSchema = new Schema(
         },
         {
           category: "pest_control",
+          no_of_questions: 5,
           scores: [],
           best_score: 0,
           worst_score: 0,
@@ -82,6 +90,7 @@ const studentSchema = new Schema(
         },
         {
           category: "neighbor_management",
+          no_of_questions: 2,
           scores: [],
           best_score: 0,
           worst_score: 0,
@@ -91,6 +100,7 @@ const studentSchema = new Schema(
         },
         {
           category: "house_maintainance",
+          no_of_questions: 9,
           scores: [],
           best_score: 0,
           worst_score: 0,
@@ -117,4 +127,9 @@ const studentSchema = new Schema(
 
 const Student = models.Student || mongoose.model("Student", studentSchema);
 
+Student.aggregate([
+  {
+    $addFields: {},
+  },
+]);
 export default Student;
