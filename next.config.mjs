@@ -10,6 +10,9 @@ const nextra = withNextra({
 const nextConfig = {
     typescript: {
         ignoreBuildErrors: true,
+    },
+    experimental: {
+        missingSuspenseWithCSRBailout: false
     }
 };
 
