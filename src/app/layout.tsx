@@ -1,9 +1,13 @@
 import { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import { SessionProvider, ThemeProvider } from "./providers";
+import {
+  SessionProvider,
+  StepProvider,
+  ThemeProvider,
+  UserProvider,
+} from "./providers";
 
 import "./globals.css";
-import "aos/dist/aos.css";
 
 import { Toaster } from "@/components/ui/toaster";
 
@@ -29,11 +33,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${font.className} flex min-h-screen flex-col bg-background dark:bg-gray-900 text-primary overflow-x-hidden`}
+        className={`${font.className} flex flex-col min-h-screen  bg-background dark:bg-gray-900 text-primary  p-0 m-0`}
       >
         <SessionProvider>
           <ThemeProvider>
-            {children}
+            <UserProvider>
+              <StepProvider>{children}</StepProvider>
+            </UserProvider>
             <Toaster />
           </ThemeProvider>
         </SessionProvider>

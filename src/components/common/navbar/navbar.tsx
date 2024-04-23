@@ -16,14 +16,15 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ThemeSwitch } from "../theme_switch";
+import { Search } from "@/components/search/search";
 import { UserProfile } from "../userProfile";
 import { SignIn } from "../signIn";
 import { nav_requirements } from "@/config/contents";
-import { nav_services } from "@/config/contents";
-import { IconType } from "react-icons/lib";
+import { UserProfileSkeleton } from "@/components/skeleton/user-profile-skeleton";
+// import { nav_services } from "@/config/contents";
 
 export function NavigationBar({ className }: { className?: string }) {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   return (
     <header
@@ -62,7 +63,7 @@ export function NavigationBar({ className }: { className?: string }) {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <NavigationMenuTrigger className="text-md text-foreground bg-transparent dark:hover:bg-gray-800 dark:focus:bg-gray-800 dark:active:bg-gray-800">
               Services
             </NavigationMenuTrigger>
@@ -81,8 +82,8 @@ export function NavigationBar({ className }: { className?: string }) {
                 ))}
               </ul>
             </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
+          </NavigationMenuItem> */}
+          {/* <NavigationMenuItem>
             <Link href="/#contacts" legacyBehavior passHref>
               <NavigationMenuLink
                 className={cn(
@@ -93,20 +94,15 @@ export function NavigationBar({ className }: { className?: string }) {
                 Contact Us
               </NavigationMenuLink>
             </Link>
-          </NavigationMenuItem>
+          </NavigationMenuItem> */}
         </NavigationMenuList>
       </NavigationMenu>
 
       <div className="flex items-center gap-1">
+        <Search />
         <ThemeSwitch />
         {status === "loading" ? (
-          <Image
-            src={"/loading.svg"}
-            alt="Loading"
-            width={20}
-            height={20}
-            className="animate-spin"
-          />
+          <UserProfileSkeleton />
         ) : status === "authenticated" ? (
           <UserProfile />
         ) : (
@@ -115,10 +111,6 @@ export function NavigationBar({ className }: { className?: string }) {
       </div>
     </header>
   );
-}
-
-interface Icon {
-  icon: IconType;
 }
 
 const ListItem = React.forwardRef(
@@ -153,4 +145,5 @@ const ListItem = React.forwardRef(
     );
   }
 );
+
 ListItem.displayName = "ListItem";

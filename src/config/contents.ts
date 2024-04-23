@@ -119,45 +119,45 @@ export const mobile_nav_links: {
       },
     ],
   },
-  {
-    title: "Services",
-    content: [
-      {
-        title: `Furnished Room Options`,
-        icon: HiHomeModern,
-        href: "/services/furnished-room-options",
-      },
-      {
-        title: `Study and Collaboration Spaces`,
-        icon: FaHammer,
-        href: "/services/study-and-collaboration-spaces",
-      },
-      {
-        title: `Monthly Cleaning Services`,
-        icon: FaPersonBooth,
-        href: "/services/monthly-cleaning-services",
-      },
-      {
-        title: `24/7 Maintenance and Support`,
-        icon: LuMicrowave,
-        href: "/services/maintenance-and-support",
-      },
-      {
-        title: `Utility and Internet Inclusion`,
-        icon: ImConnection,
-        href: "/services/utility-and-internet-inclusion",
-      },
-      {
-        title: `Community Events and Workshops`,
-        icon: FaPeopleGroup,
-        href: "/services/community-events-and-workshops",
-      },
-    ],
-  },
-  {
-    title: "Contact Us",
-    href: "/#contacts",
-  },
+  // {
+  //   title: "Services",
+  //   content: [
+  //     {
+  //       title: `Furnished Room Options`,
+  //       icon: HiHomeModern,
+  //       href: "/services/furnished-room-options",
+  //     },
+  //     {
+  //       title: `Study and Collaboration Spaces`,
+  //       icon: FaHammer,
+  //       href: "/services/study-and-collaboration-spaces",
+  //     },
+  //     {
+  //       title: `Monthly Cleaning Services`,
+  //       icon: FaPersonBooth,
+  //       href: "/services/monthly-cleaning-services",
+  //     },
+  //     {
+  //       title: `24/7 Maintenance and Support`,
+  //       icon: LuMicrowave,
+  //       href: "/services/maintenance-and-support",
+  //     },
+  //     {
+  //       title: `Utility and Internet Inclusion`,
+  //       icon: ImConnection,
+  //       href: "/services/utility-and-internet-inclusion",
+  //     },
+  //     {
+  //       title: `Community Events and Workshops`,
+  //       icon: FaPeopleGroup,
+  //       href: "/services/community-events-and-workshops",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Contact Us",
+  //   href: "/#contacts",
+  // },
   {
     title: "Profile",
     href: "/profile",

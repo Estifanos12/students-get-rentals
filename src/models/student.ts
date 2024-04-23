@@ -39,6 +39,10 @@ const studentSchema = new Schema(
       type: String,
       default: "",
     },
+    profile_picture: {
+      type: String,
+      default: "",
+    },
     email_verified: {
       type: Boolean,
       default: false,
@@ -127,9 +131,4 @@ const studentSchema = new Schema(
 
 const Student = models.Student || mongoose.model("Student", studentSchema);
 
-Student.aggregate([
-  {
-    $addFields: {},
-  },
-]);
 export default Student;

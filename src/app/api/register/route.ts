@@ -1,20 +1,13 @@
 import { NextResponse } from "next/server";
-import Joi from "joi";
 import bcrpyt from "bcrypt";
 import { totp } from "otplib";
 
 import { connectToDB } from "@/lib/mongoClient";
+import { createUserSchema } from "@/schema";
 import Student from "@/models/student";
 import OTP from "@/models/otp";
 import { CreateStudentBody } from "@/types";
 import { sendOTPEmail } from "@/lib/nodemailer";
-
-const validationSchema = Joi.object({
-  fullname: Joi.string().required(),
-  email: Joi.string().email().required(),
-  password: Joi.string().required(),
-  email_verified: Joi.boolean().default(false).optional(),
-});
 
 export const POST = async (req: Request, res: Response) => {
   totp.options = { digits: 6 };
@@ -25,9 +18,12 @@ export const POST = async (req: Request, res: Response) => {
     await connectToDB();
 
     const requestBody: CreateStudentBody = await req.json();
-    const { error } = validationSchema.validate(requestBody);
-    if (error) {
-      return NextResponse.json({ error: error.details }, { status: 400 });
+    const { success } = createUserSchema.safeParse(requestBody);
+    if (!success) {
+      return NextResponse.json(
+        { error: "Invalid credentials" },
+        { status: 400 }
+      );
     }
 
     const studentExists = await Student.findOne({
@@ -55,11 +51,6 @@ export const POST = async (req: Request, res: Response) => {
       email: requestBody.email.toLowerCase(),
       bio: "",
     };
-
-    console.log("requestBody: ", {
-      ...requestBody,
-      password: hashedPassword,
-    });
 
     const student = new Student(requestBodyHased);
     await student.save(student);

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { CustomInputOTP } from "./input_otp";
 import { apiRequest } from "@/services/api/apiRequest";
@@ -16,6 +16,9 @@ export const EmailVerification = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [email] = useLocalStorage("email");
+  const searchParams = useSearchParams();
+
+  const id = searchParams.get("id");
 
   useEffect(() => {
     if (!email) {
@@ -50,7 +53,7 @@ export const EmailVerification = () => {
         description:
           "Your email has been verified successfully. You're now logged in",
       });
-      router.push("/login");
+      router.push(`/build_your_profile?id=${id}`);
     } catch (error) {
       console.log(error);
       toast({
@@ -87,7 +90,7 @@ export const EmailVerification = () => {
         {loading && (
           <svg
             viewBox="0 0 24 24"
-            fill="none"
+            fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
             className="animate-spin text-primary"
             width={24}

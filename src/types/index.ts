@@ -11,6 +11,12 @@ export type TRegister = {
   agree_terms: boolean;
 };
 
+export type TChangePassword = {
+  old_password: string;
+  new_password: string;
+  confirm_password: string;
+};
+
 export type TCardWrapper = {
   children: React.ReactNode;
   header?: React.ReactNode;
@@ -28,16 +34,16 @@ export type CreateStudentBody = {
 export interface IApiRequest {
   endpoint: string;
   method:
-    | 'GET'
-    | 'POST'
-    | 'PUT'
-    | 'DELETE'
-    | 'PATCH'
-    | 'OPTIONS'
-    | 'HEAD'
-    | 'CONNECT'
-    | 'TRACE';
-  data?: FormData | string ;
+    | "GET"
+    | "POST"
+    | "PUT"
+    | "DELETE"
+    | "PATCH"
+    | "OPTIONS"
+    | "HEAD"
+    | "CONNECT"
+    | "TRACE";
+  data?: FormData | string;
 }
 
 export type ContactForm = {

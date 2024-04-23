@@ -7,6 +7,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 
 import { Button } from "../ui/button";
 import { Tooltip } from "./tooltip";
+import { ThemeSwithcerSkeleton } from "../skeleton/theme-switcher-skeleton";
 
 export const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false);
@@ -15,15 +16,7 @@ export const ThemeSwitch = () => {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return (
-      <Image
-        src={"/loading.svg"}
-        alt="Loading"
-        width={20}
-        height={20}
-        className="animate-spin"
-      />
-    );
+    return <ThemeSwithcerSkeleton />;
   }
 
   return (

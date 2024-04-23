@@ -15,6 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { registerSchema } from "../../schema";
@@ -22,11 +23,11 @@ import { TRegister } from "@/types";
 import { CardWrapper } from "../common/card_wrapper";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import placeholderImage from "../../../public/placeholder.webp";
 import { Checkbox } from "../ui/checkbox";
 import { apiRequest } from "@/services/api/apiRequest";
 import { toast } from "../ui/use-toast";
 import useLocalStorage from "@/hooks/useLocalstorage";
+import Auth_Background from "../../../public/auth_bg.jpg";
 
 const RegisterForm = () => {
   const router = useRouter();
@@ -64,21 +65,22 @@ const RegisterForm = () => {
         return;
       }
       setValue(data?.email);
+
       toast({
         title: "Registered successfully",
         description: "You've been successfully registered",
       });
-      router.push("/verify-email");
+      router.push(`/verify-email?id=${response.data.user._id}`);
     } catch (error) {
-      console.log(error);
       toast({
         title: (error?.response?.data?.error as string) || "Error",
         variant: "destructive",
       });
     }
   };
+
   return (
-    <div className="flex ">
+    <div className="flex">
       <CardWrapper
         header={<Header title="Register" label="Start your journey with us" />}
         footer={
@@ -88,7 +90,7 @@ const RegisterForm = () => {
             className="mx-auto w-full max-w-md"
           />
         }
-        className="flex flex-1 flex-col justify-start py-12 shadow-none bg-transparent"
+        className="min-h-screen flex flex-[1] flex-col justify-start py-12 shadow-none bg-transparent"
       >
         <div className="mx-auto w-full max-w-md">
           <Form {...form}>
@@ -191,7 +193,11 @@ const RegisterForm = () => {
                       </FormControl>
                       <FormLabel>
                         I agree to the{" "}
-                        <Link href={"/"} className="hover:underline">
+                        <Link
+                          href={"/terms_and_conditions"}
+                          className="hover:underline"
+                          target={"_blank"}
+                        >
                           {" "}
                           terms and condition
                         </Link>
@@ -244,10 +250,10 @@ const RegisterForm = () => {
         </div>
       </CardWrapper>
 
-      <div className="relative hidden w-0 flex-[1.5] h-full lg:block">
+      <div className="relative hidden w-0 flex-[1.5] min-h-screen lg:block">
         <Image
           className="absolute inset-0 w-full h-full object-cover"
-          src={placeholderImage}
+          src={Auth_Background}
           alt=""
           objectFit="cover"
         />

@@ -1,11 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { heroHeader } from "@/config/contents";
 
+import { usePreference } from "@/services/queries/usePreferences";
+
 export default function HeroHeader() {
+  const { data: session, status } = useSession();
+  const { data: preference, isLoading } = usePreference(
+    session?.user.id as string
+  );
+
   return (
     <div className="min-h-[calc(100vh-110px)] grid place-items-center mb-28">
       <section className="lg:max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse md:justify-end gap-4 pb-12 pt-4 px-2 text-center lg:items-center lg:gap-10 lg:py-20">
@@ -56,15 +66,38 @@ export default function HeroHeader() {
               />
             </Link>
           </div>
-          <Link
-            href="/courses"
-            target="_blank"
-            className={`w-[10rem] text-white ${cn(
-              buttonVariants({ size: "lg" })
-            )}`}
-          >
-            Start learning
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/courses"
+              target="_blank"
+              className={`w-[10rem] text-white ${cn(
+                buttonVariants({ size: "lg" })
+              )}`}
+            >
+              Start learning
+            </Link>
+            {isLoading || status === "loading" ? (
+              <>
+                <Image
+                  src={"/loading.svg"}
+                  alt="Loading"
+                  width={20}
+                  height={20}
+                  className="animate-spin"
+                />
+              </>
+            ) : preference?.preference === "GROUP" ||
+              preference?.preference === "SINGLE" ? (
+              <Link
+                href={`/room_mates?preference=${preference?.preference}`}
+                className={`w-[10rem] text-white ${cn(
+                  buttonVariants({ size: "lg" })
+                )}`}
+              >
+                Find Roommates
+              </Link>
+            ) : null}
+          </div>
         </div>
         {heroHeader.image !== "" ? (
           <div className="flex flex-1 justify-center lg:justify-start ">

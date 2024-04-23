@@ -12,7 +12,10 @@ const nextConfig = {
         ignoreBuildErrors: true,
     },
     experimental: {
-        missingSuspenseWithCSRBailout: false
+        missingSuspenseWithCSRBailout: false,
+        serverActions: {
+            bodySizeLimit: "4mb",
+        }
     }
 };
 

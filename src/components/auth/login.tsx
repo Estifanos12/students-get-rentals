@@ -28,7 +28,7 @@ import { toast } from "../ui/use-toast";
 
 const LoginForm = () => {
   const searchParams = useSearchParams();
-  const callback = searchParams.get("callbackUrl");
+  const callback = searchParams?.get("callbackUrl");
 
   const router = useRouter();
   const form = useForm<TLogin>({
@@ -72,7 +72,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-1">
+    <div className="flex flex-1">
       <CardWrapper
         header={<Header title="Login" label="Welcome back" />}
         footer={
@@ -82,7 +82,7 @@ const LoginForm = () => {
             className="mx-auto w-full max-w-md"
           />
         }
-        className="flex flex-1 flex-col justify-start py-12 bg-transparent"
+        className="flex flex-1 flex-col min-h-screen justify-start py-12 bg-transparent"
       >
         <div className="mx-auto w-full max-w-md">
           <Form {...form}>

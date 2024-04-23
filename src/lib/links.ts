@@ -5,16 +5,16 @@ export const navLinks = [
   },
   {
     route: "Requirements",
-    path: "/#requirements",
+    path: "/courses",
   },
-  {
-    route: "Services",
-    path: "/#services",
-  },
-  {
-    route: "Contact Us",
-    path: "/#contacts",
-  },
+  // {
+  //   route: "Services",
+  //   path: "/#services",
+  // },
+  // {
+  //   route: "Contact Us",
+  //   path: "/#contacts",
+  // },
 ];
 
 export const socialLinks = [
@@ -24,7 +24,7 @@ export const socialLinks = [
   },
   {
     name: "Facebook",
-    path: "https://facebook.com/",
+    path: "https://facebook.com/profile.php?id=61558815329772",
   },
   {
     name: "Instagram",
