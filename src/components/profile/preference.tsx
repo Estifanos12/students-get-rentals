@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { FaEdit } from "react-icons/fa";
+import { useUser } from "@/hooks/useUser";
 
 export const Group = ({ preference }) => {
   return (
@@ -100,11 +101,12 @@ export const NotRental = () => {
 };
 export const Preferences = () => {
   const { data: session, status } = useSession();
+  const user = useUser();
   const {
     data: preference,
     isLoading,
     isValidating,
-  } = usePreference(session?.user.id as string);
+  } = usePreference(user?.value?._id as string);
 
   return (
     <>

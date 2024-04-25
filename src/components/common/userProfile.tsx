@@ -27,6 +27,7 @@ export const UserProfile = () => {
     return null;
   }
 
+  console.log(session);
   return (
     <div className="relative">
       <DropdownMenu>
@@ -40,7 +41,13 @@ export const UserProfile = () => {
               />
             </div>
           ) : (
-            <InitialsAvatar name={session.user.fullname || "Not Avaliable"} />
+            <InitialsAvatar
+              name={
+                session.user.fullname ||
+                user?.value?.fullname ||
+                "Not Avaliable"
+              }
+            />
           )}
         </DropdownMenuTrigger>
         <DropdownMenuContent className="absolute -right-5 w-64 text-md dark:bg-gray-800 outline-none border-none">

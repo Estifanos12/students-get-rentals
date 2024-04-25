@@ -9,11 +9,13 @@ import { cn } from "@/lib/utils";
 import { heroHeader } from "@/config/contents";
 
 import { usePreference } from "@/services/queries/usePreferences";
+import { useUser } from "@/hooks/useUser";
 
 export default function HeroHeader() {
   const { data: session, status } = useSession();
+  const user = useUser();
   const { data: preference, isLoading } = usePreference(
-    session?.user.id as string
+    user?.value?._id as string
   );
 
   return (
@@ -33,7 +35,7 @@ export default function HeroHeader() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Link
+            {/* <Link
               href={"/"}
               target="_blank"
               className="shadow-2xl p-3 rounded-md flex items-center gap-2 hover:bg-primary group transition-all duration-500"
@@ -48,9 +50,9 @@ export default function HeroHeader() {
                 alt="Google"
                 className="inline"
               />
-            </Link>
+            </Link> */}
             <Link
-              href={"/"}
+              href={"https://www.facebook.com/profile.php?id=61558815329772"}
               target="_blank"
               className="shadow-2xl p-3 rounded-md flex items-center gap-2 hover:bg-primary group transition-all duration-500"
             >
@@ -61,7 +63,7 @@ export default function HeroHeader() {
                 src="/facebook.svg"
                 width={20}
                 height={20}
-                alt="Google"
+                alt="Facebook"
                 className="inline"
               />
             </Link>

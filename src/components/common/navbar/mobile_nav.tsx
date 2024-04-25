@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 import {
   Collapsible,
@@ -14,8 +15,6 @@ import { mobile_nav_links } from "@/config/contents";
 import { cn } from "@/lib/utils";
 import { IoIosArrowDown } from "react-icons/io";
 import { ThemeSwitch } from "../theme_switch";
-import { Search } from "@/components/search/search";
-import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 
 const MobileNav = ({ className }: { className?: string }) => {
@@ -47,7 +46,6 @@ const MobileNav = ({ className }: { className?: string }) => {
           />
         </Link>
         <div className="flex items-center gap-0.5">
-          <Search />
           <ThemeSwitch />
           <button
             aria-label="Toggle Menu"

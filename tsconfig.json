@@ -34,8 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/types/**/*.ts",
-    "src/actions/auto_complete.ts",
-    "src/pages/terms_and_conditions/page.mdx"
+    "src/actions/auto_complete.ts"
   ],
   "exclude": [
     "node_modules"

@@ -16,7 +16,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ThemeSwitch } from "../theme_switch";
-import { Search } from "@/components/search/search";
 import { UserProfile } from "../userProfile";
 import { SignIn } from "../signIn";
 import { nav_requirements } from "@/config/contents";
@@ -99,7 +98,6 @@ export function NavigationBar({ className }: { className?: string }) {
       </NavigationMenu>
 
       <div className="flex items-center gap-1">
-        <Search />
         <ThemeSwitch />
         {status === "loading" ? (
           <UserProfileSkeleton />

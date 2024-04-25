@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { toast } from "../ui/use-toast";
+import { useRouter } from "next/navigation";
 
 type FooterProps = {
   link: string;
@@ -22,8 +23,8 @@ export const Footer = ({ link, linkLabel, className }: FooterProps) => {
     try {
       setLoading(true);
       await signIn(provider, {
-        callbackUrl: "/",
-        redirect: false,
+        callbackUrl: "/api/redirect-after-login",
+        // redirect: false,
       });
     } catch (error) {
       console.log(error);

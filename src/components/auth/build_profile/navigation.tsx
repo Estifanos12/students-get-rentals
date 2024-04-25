@@ -84,7 +84,11 @@ const Navigation = () => {
           data: body,
           endpoint: `api/create_preferences?id=${userId}`,
         });
-        router.replace("/build_your_profile/profile_build");
+        if (callback === "provider-login") {
+          router.replace("/");
+        } else {
+          router.replace("/build_your_profile/profile_build");
+        }
       }
     } catch (error) {
       toast({

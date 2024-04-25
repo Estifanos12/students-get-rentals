@@ -7,14 +7,6 @@ export const navLinks = [
     route: "Requirements",
     path: "/courses",
   },
-  // {
-  //   route: "Services",
-  //   path: "/#services",
-  // },
-  // {
-  //   route: "Contact Us",
-  //   path: "/#contacts",
-  // },
 ];
 
 export const socialLinks = [
@@ -43,6 +35,6 @@ export const terms_and_policy = [
   },
   {
     name: "Terms & Conditions",
-    path: "/terms",
+    path: "/terms_and_conditions",
   },
 ];

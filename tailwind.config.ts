@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+import plugin from "tailwindcss/plugin";
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -82,7 +84,13 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+
+    plugin(function ({ addVariant }) {
+      addVariant("hocus", ["&:hover", "&:focus"]);
+    }),
+  ],
 } satisfies Config;
 
 export default config;

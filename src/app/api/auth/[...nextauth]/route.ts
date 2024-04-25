@@ -87,15 +87,16 @@ export const authOptions: NextAuthOptions = {
                 }),
               }
             );
-          } else {
-            return NextResponse.json(
-              {
-                message:
-                  "User already exists. Please login with your credentials.",
-              },
-              { status: 409 }
-            );
           }
+          // else {
+          //   return NextResponse.json(
+          //     {
+          //       message:
+          //         "User already exists. Please login with your credentials.",
+          //     },
+          //     { status: 409 }
+          //   );
+          // }
         } catch (error) {
           console.log(error);
         }
@@ -120,9 +121,8 @@ export const authOptions: NextAuthOptions = {
     },
 
     async redirect({ url, baseUrl }) {
-      console.log(baseUrl);
-
-      return baseUrl;
+      console.log(url);
+      return url;
     },
   },
   pages: {},

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { GroupBadge, SingleBadge } from "@/app/(app)/room_mates/badge";
 import { Card } from "../ui/card";
+import { FaLocationDot } from "react-icons/fa6";
 
 export const GroupCard = ({ preference }) => {
   return (
@@ -21,29 +22,39 @@ export const GroupCard = ({ preference }) => {
 
               <GroupBadge />
             </h1>
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              <strong>No. of students</strong>: {preference.no_of_students}
+            <p className="text-sm text-muted-foreground  inline-flex line-clamp-2 ">
+              {preference.no_of_students}
+              &nbsp;
+              <strong>
+                {parseInt(preference.no_of_students) > 1
+                  ? "students"
+                  : "student"}
+              </strong>
+            </p>{" "}
+            <span
+              className="size-1 rounded-full bg-primary inline-block mx-1"
+              aria-label="dot"
+              aria-hidden
+            ></span>
+            <p className="text-sm text-muted-foreground inline-flex line-clamp-2">
+              {preference.approximate_age}&nbsp;
+              <strong>Approximate age</strong>
             </p>
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              <strong>Approximate age</strong>: {preference.approximate_age}
+            <p className="text-sm text-muted-foreground line-clamp-2 pt-3">
+              {preference.group_description}
             </p>
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              <strong>Group description</strong>: {preference.group_description}
-            </p>
-
             <div className="py-2 flex flex-wrap items-center gap-5">
-              {Object.keys(preference.group_identity.toObject()).map(
-                (group_identity) =>
-                  preference.group_identity[group_identity] === true ? (
-                    <div
-                      key={group_identity}
-                      className="outline outline-1 outline-light bg-light dark:bg-gray-800 dark:outline-[0.5px] w-fit p-2 rounded-2xl"
-                    >
-                      <span className="text-xs text-muted-foreground font-bold">
-                        {group_identity.replace("_", " ")}
-                      </span>
-                    </div>
-                  ) : null
+              {Object.keys(preference.group_identity).map((group_identity) =>
+                preference.group_identity[group_identity] === true ? (
+                  <div
+                    key={group_identity}
+                    className="outline outline-1 outline-light bg-light dark:bg-gray-800 dark:outline-[0.5px] w-fit p-2 rounded-2xl"
+                  >
+                    <span className="text-xs text-muted-foreground font-bold">
+                      {group_identity.replace("_", " ")}
+                    </span>
+                  </div>
+                ) : null
               )}
             </div>
           </div>
@@ -69,23 +80,26 @@ export const SingleCard = ({ preference }) => {
               {preference.userId.fullname}
               <SingleBadge />
             </h1>
-            <p className="text-sm text-muted-foreground">
-              <strong>Job title </strong>: {preference.job_title || "No title"}
+            <p className="text-sm text-muted-foreground inline-flex items-center gap-1 font-semibold">
+              <img src="/job.svg" alt="Job" width={15} height={15} />
+              {preference.job_title || "No title"}
             </p>
-            <p className="text-sm text-muted-foreground">
-              <strong>Moving date</strong>:{" "}
-              {new Date(preference.date).toDateString() || "No date"}
+
+            <p className="text-sm text-muted-foreground inline-flex items-center gap-1 ml-2 font-semibold">
+              <FaLocationDot size={15} className="inline text-primary" />
+              {preference.address || "No address"}
             </p>
-            <p className="text-sm text-muted-foreground">
-              <strong>Address</strong>: {preference.address || "No address"}
-            </p>
-            <p className="text-sm text-muted-foreground line-clamp-2">
-              <strong>Description</strong>:{" "}
+
+            <p className="text-sm text-muted-foreground line-clamp-3">
               {preference.description || "No description"}
             </p>
 
+            <p className="text-sm text-muted-foreground pt-3">
+              <strong>Moving date</strong>:{" "}
+              {new Date(preference.date).toDateString() || "No date"}
+            </p>
             <div className="py-2 flex flex-wrap items-center gap-5">
-              {Object.keys(preference.identity.toObject()).map((identity) =>
+              {Object.keys(preference.identity).map((identity) =>
                 preference.identity[identity] === true ? (
                   <div
                     key={identity}
