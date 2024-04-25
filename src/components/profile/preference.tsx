@@ -113,7 +113,7 @@ export const Preferences = () => {
       <div className="flex items-center justify-between">
         <h2 className="text-foreground font-bold text-lg">Your Preferences</h2>
         <Link
-          href={`/build_your_profile?id=${session?.user.id}&task=edit&callback=profile`}
+          href={`/build_your_profile?id=${user.value._id}&task=edit&callback=profile`}
           target="_blank"
         >
           <Button
