@@ -12,7 +12,6 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import Image from "@tiptap/extension-image";
 import StarterKit from "@tiptap/starter-kit";
 import Link from "@tiptap/extension-link";
-import { generateHTML } from "@tiptap/html";
 
 import {
   FaBold,

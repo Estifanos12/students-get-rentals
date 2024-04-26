@@ -49,7 +49,7 @@ export const Badge = ({ results }) => {
                 </CardContent>
               ) : (
                 <CardContent className="">
-                  <i>Student haven&#39;t taken the quiz yet.</i>
+                  <i>Student hasn&#39;t taken the quiz yet.</i>
                 </CardContent>
               )}
             </Card>

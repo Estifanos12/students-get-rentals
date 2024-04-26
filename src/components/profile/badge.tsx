@@ -46,6 +46,14 @@ export const Badge = ({ results }) => {
                         : "Golden badge"}
                     </span>
                   </div>
+                  <Link
+                    href={course.link}
+                    className="text-primary flex items-center gap-1 mt-2 hover:underline ml-auto"
+                    target="_blank"
+                  >
+                    <span>Take quiz</span>
+                    <FaExternalLinkAlt className="inline" size={13} />
+                  </Link>
                 </CardContent>
               ) : (
                 <CardContent className="flex justify-between items-center">

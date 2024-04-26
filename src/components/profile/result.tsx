@@ -62,12 +62,25 @@ export const Result = ({ result }) => {
 
                   <CardContent className="flex justify-between items-center">
                     {course_result ? (
-                      <div>
-                        <p>
-                          Average score:{" "}
-                          {course_result.average_score.toFixed(2)}
-                        </p>
-                        <p>Number of attempts: {course_result.no_of_trails}</p>
+                      <div className="flex justify-between items-center w-full">
+                        <div>
+                          <p>
+                            Average score:{" "}
+                            {course_result.average_score.toFixed(2)}
+                          </p>
+                          <p>
+                            Number of attempts: {course_result.no_of_trails}
+                          </p>
+                        </div>
+
+                        <Link
+                          href={course.link}
+                          className="text-primary flex items-center gap-1 mt-2 hover:underline"
+                          target="_blank"
+                        >
+                          <span>Take quiz</span>
+                          <FaExternalLinkAlt className="inline" size={13} />
+                        </Link>
                       </div>
                     ) : null}
 

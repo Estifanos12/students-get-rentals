@@ -3,14 +3,25 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "next/image";
+import TiptapImage from "@tiptap/extension-image";
 
 import "../text-editor/styles.scss";
 
 export const Bio = ({ bio }) => {
+  console.log(bio);
   const editor = useEditor({
     content: bio,
     editable: false,
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      TiptapImage.configure({
+        inline: true,
+        HTMLAttributes: {
+          width: 300,
+          height: 300,
+        },
+      }),
+    ],
   });
 
   if (!editor) {
