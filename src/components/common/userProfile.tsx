@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
-import { useUser } from "@/hooks/useUser";
 
 import {
   DropdownMenu,
@@ -12,42 +11,39 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { InitialsAvatar } from "./initials_avatar";
+import { useUser } from "@/services/queries/useUser";
+import { UserProfileSkeleton } from "../skeleton/user-profile-skeleton";
 
 export const UserProfile = () => {
-  const { data: session, status } = useSession({
+  const { data: session } = useSession({
     required: true,
     onUnauthenticated() {
       redirect("/login?callbackUrl=/profile");
     },
   });
 
-  const user = useUser();
+  const {
+    data: user,
+    isLoading,
+    isValidating,
+  } = useUser(session?.user?.email as string);
 
-  if (status === "loading") {
-    return null;
-  }
-
-  console.log(session);
   return (
     <div className="relative">
       <DropdownMenu>
         <DropdownMenuTrigger className="focus:border-primary focus:outline-primary">
-          {user && user.value && user.value.profile_picture ? (
+          {isLoading || isValidating ? (
+            <UserProfileSkeleton />
+          ) : user ? (
             <div className="w-[45px]  aspect-square overflow-hidden rounded-full p-1 group outline outline-2 outline-slate-300 hover:outline-primary transition-[outline-color] duration-300">
               <img
-                src={user.value.profile_picture}
-                alt={session.user.fullname}
+                src={user?.profile_picture}
+                alt={user?.fullname}
                 className="rounded-full object-cover w-full h-full"
               />
             </div>
           ) : (
-            <InitialsAvatar
-              name={
-                session.user.fullname ||
-                user?.value?.fullname ||
-                "Not Avaliable"
-              }
-            />
+            <InitialsAvatar name={user?.fullname || "Not Avaliable"} />
           )}
         </DropdownMenuTrigger>
         <DropdownMenuContent className="absolute -right-5 w-64 text-md dark:bg-gray-800 outline-none border-none">

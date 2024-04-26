@@ -28,7 +28,7 @@ const group_identity_schema = new mongoose.Schema({
   },
 });
 
-const basePreferenceSchema = new mongoose.Schema(
+export const basePreferenceSchema = new mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -47,7 +47,7 @@ const basePreferenceSchema = new mongoose.Schema(
   }
 );
 
-const GroupSchema = new mongoose.Schema({
+export const GroupSchema = new mongoose.Schema({
   group_description: {
     type: String,
     required: true,
@@ -66,7 +66,7 @@ const GroupSchema = new mongoose.Schema({
   },
 });
 
-const SingleSchema = new mongoose.Schema({
+export const SingleSchema = new mongoose.Schema({
   job_title: {
     type: String,
     required: true,
@@ -88,7 +88,7 @@ const SingleSchema = new mongoose.Schema({
   },
 });
 
-const FullGroupSchema = new mongoose.Schema({
+export const FullGroupSchema = new mongoose.Schema({
   group_description: {
     type: String,
     required: true,
@@ -107,7 +107,7 @@ const FullGroupSchema = new mongoose.Schema({
   },
 });
 
-const NotRentalSchema = new mongoose.Schema({});
+export const NotRentalSchema = new mongoose.Schema({});
 
 export const Preference =
   models.Preference || mongoose.model("Preference", basePreferenceSchema);

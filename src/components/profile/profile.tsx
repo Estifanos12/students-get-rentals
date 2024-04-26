@@ -19,7 +19,7 @@ const Profile = ({ data }: any) => {
         <Separator className="my-5" />
 
         <div className="">
-          <Preferences />
+          <Preferences id={data._id} />
         </div>
 
         <Separator className="my-5" />

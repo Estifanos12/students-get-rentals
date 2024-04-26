@@ -73,7 +73,7 @@ export const authOptions: NextAuthOptions = {
           });
           if (!user) {
             const response = await fetch(
-              `${process.env.NEXT_PUBLIC_BASE_URL}api/register`,
+              `${process.env.NEXT_PUBLIC_BASE_URL}api/register?verified=true`,
               {
                 method: "POST",
                 headers: {

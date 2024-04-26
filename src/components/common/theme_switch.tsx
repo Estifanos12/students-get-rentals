@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { useTheme } from "next-themes";
 import { FaMoon, FaSun } from "react-icons/fa";
 

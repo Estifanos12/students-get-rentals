@@ -20,7 +20,7 @@ const resultSchema = new Schema({
   no_of_trails: Number,
 });
 
-const studentSchema = new Schema(
+export const studentSchema = new Schema(
   {
     fullname: {
       type: String,

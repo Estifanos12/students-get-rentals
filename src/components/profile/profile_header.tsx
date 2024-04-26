@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useSWRConfig } from "swr";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { FaCamera } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -9,14 +11,13 @@ import { InitialsAvatar } from "../common/initials_avatar";
 import { Button } from "../ui/button";
 import { updateProfilePicture } from "@/actions/update_profile_picture";
 import { toast } from "../ui/use-toast";
-import { useUser } from "@/hooks/useUser";
 
 export const ProfileHeader = ({ data }) => {
+  const { mutate } = useSWRConfig();
+  const { data: session } = useSession();
   const [image, setImage] = useState(data.profile_picture);
   const [loading, setLoading] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
-
-  const { refetch } = useUser();
 
   const handleSave = async () => {
     try {
@@ -26,7 +27,7 @@ export const ProfileHeader = ({ data }) => {
       formData.append("id", data._id);
       const response = await updateProfilePicture(formData);
       if (response.success) {
-        refetch();
+        mutate(`/api/get-student?email=${session?.user?.email}`);
         toast({
           title: response.message,
         });

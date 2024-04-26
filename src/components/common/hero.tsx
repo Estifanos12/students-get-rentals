@@ -9,14 +9,10 @@ import { cn } from "@/lib/utils";
 import { heroHeader } from "@/config/contents";
 
 import { usePreference } from "@/services/queries/usePreferences";
-import { useUser } from "@/hooks/useUser";
 
 export default function HeroHeader() {
-  const { data: session, status } = useSession();
-  const user = useUser();
-  const { data: preference, isLoading } = usePreference(
-    user?.value?._id as string
-  );
+  const { status } = useSession();
+  const { data: preference, isLoading } = usePreference();
 
   return (
     <div className="min-h-[calc(100vh-110px)] grid place-items-center mb-28">

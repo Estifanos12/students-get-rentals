@@ -1,11 +1,6 @@
 import { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import {
-  SessionProvider,
-  StepProvider,
-  ThemeProvider,
-  UserProvider,
-} from "./providers";
+import { SessionProvider, StepProvider, ThemeProvider } from "./providers";
 
 import "./globals.css";
 
@@ -37,9 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <SessionProvider>
           <ThemeProvider>
-            <UserProvider>
-              <StepProvider>{children}</StepProvider>
-            </UserProvider>
+            <StepProvider>{children}</StepProvider>
             <Toaster />
           </ThemeProvider>
         </SessionProvider>

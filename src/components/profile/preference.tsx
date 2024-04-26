@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { FaEdit } from "react-icons/fa";
-import { useUser } from "@/hooks/useUser";
 
 export const Group = ({ preference }) => {
   return (
@@ -99,21 +98,16 @@ export const NotRental = () => {
     </div>
   );
 };
-export const Preferences = () => {
-  const { data: session, status } = useSession();
-  const user = useUser();
-  const {
-    data: preference,
-    isLoading,
-    isValidating,
-  } = usePreference(user?.value?._id as string);
+export const Preferences = ({ id }) => {
+  const { status } = useSession();
+  const { data: preference, isLoading, isValidating } = usePreference();
 
   return (
     <>
       <div className="flex items-center justify-between">
         <h2 className="text-foreground font-bold text-lg">Your Preferences</h2>
         <Link
-          href={`/build_your_profile?id=${user.value._id}&task=edit&callback=profile`}
+          href={`/build_your_profile?id=${id}&task=edit&callback=profile`}
           target="_blank"
         >
           <Button

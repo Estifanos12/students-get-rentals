@@ -13,6 +13,8 @@ export const POST = async (req: Request, res: Response) => {
   totp.options = { digits: 6 };
   const secret = process.env.OTP_SECRET;
   const token = totp.generate(secret as string);
+  const reqUrl = new URL(req.url);
+  const is_verified = reqUrl.searchParams.get("verified") === "true" || false;
 
   try {
     await connectToDB();
@@ -37,12 +39,6 @@ export const POST = async (req: Request, res: Response) => {
       );
     }
 
-    const userOtp = new OTP({
-      email: requestBody.email.toLowerCase(),
-      otp: token,
-      valid: true,
-    });
-
     const hashedPassword = await bcrpyt.hash(requestBody.password, 10);
 
     const requestBodyHased = {
@@ -54,12 +50,21 @@ export const POST = async (req: Request, res: Response) => {
 
     const student = new Student(requestBodyHased);
     await student.save(student);
-    await userOtp.save(userOtp);
-    await sendOTPEmail({
-      to: requestBody.email,
-      subject: "Email Verification",
-      text: token,
-    });
+
+    if (!is_verified) {
+      const userOtp = new OTP({
+        email: requestBody.email.toLowerCase(),
+        otp: token,
+        valid: true,
+      });
+
+      await userOtp.save(userOtp);
+      await sendOTPEmail({
+        to: requestBody.email,
+        subject: "Email Verification",
+        text: token,
+      });
+    }
 
     return NextResponse.json(
       { user: student, message: "Student created successfully" },
