@@ -12,7 +12,7 @@ export const POST = async (req: Request, res: Response) => {
   const user = await OTP.findOne({ email: email.toLowerCase() });
   if (user) {
     if (user.valid === false) {
-      await OTP.deleteOne({ email: email.toLowerCase() });
+      await OTP.deleteMany({ email: email.toLowerCase() });
 
       sendNewOtp(email);
       return NextResponse.json({ message: "Email Sent" }, { status: 200 });

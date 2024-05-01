@@ -26,24 +26,20 @@ export const UserProfile = () => {
     data: user,
     isLoading,
     isValidating,
+    error,
   } = useUser(session?.user?.email as string);
 
   return (
     <div className="relative">
       <DropdownMenu>
         <DropdownMenuTrigger className="focus:border-primary focus:outline-primary">
-          {isLoading || isValidating ? (
+          {isLoading || isValidating || error ? (
             <UserProfileSkeleton />
-          ) : user ? (
-            <div className="w-[45px]  aspect-square overflow-hidden rounded-full p-1 group outline outline-2 outline-slate-300 hover:outline-primary transition-[outline-color] duration-300">
-              <img
-                src={user?.profile_picture}
-                alt={user?.fullname}
-                className="rounded-full object-cover w-full h-full"
-              />
-            </div>
           ) : (
-            <InitialsAvatar name={user?.fullname || "Not Avaliable"} />
+            <InitialsAvatar
+              name={user.fullname || "Not Avaliable"}
+              profile={user.profile_picture}
+            />
           )}
         </DropdownMenuTrigger>
         <DropdownMenuContent className="absolute -right-5 w-64 text-md dark:bg-gray-800 outline-none border-none">

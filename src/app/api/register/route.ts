@@ -52,6 +52,8 @@ export const POST = async (req: Request, res: Response) => {
     await student.save(student);
 
     if (!is_verified) {
+      console.log("Sending email");
+      await OTP.deleteMany({ email: requestBody.email.toLowerCase() });
       const userOtp = new OTP({
         email: requestBody.email.toLowerCase(),
         otp: token,
